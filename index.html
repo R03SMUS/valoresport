@@ -1,5 +1,586 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Valor Esport</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VALOR ESPORT — WE DO NOT LOSE (SOMETIMES)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Oswald:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #e8001d;
+      --gold: #c89b3c;
+      --dark: #0a0a0a;
+      --darker: #050505;
+      --grey: #1a1a1a;
+      --text: #d0cfc9;
+      --dim: #666;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--darker);
+      color: var(--text);
+      font-family: 'Share Tech Mono', monospace;
+      overflow-x: hidden;
+      cursor: crosshair;
+    }
+
+    /* Scanline overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.08) 2px,
+        rgba(0,0,0,0.08) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── HERO ── */
+    header {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 60%, #1a0005 0%, #0a0a0a 70%);
+    }
+
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(232,0,29,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,0,29,0.07) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridPan 20s linear infinite;
+    }
+
+    @keyframes gridPan {
+      from { transform: translateY(0); }
+      to   { transform: translateY(60px); }
+    }
+
+    .corner { position: absolute; width: 60px; height: 60px; }
+    .corner--tl { top: 24px; left: 24px; border-top: 2px solid var(--red); border-left: 2px solid var(--red); }
+    .corner--tr { top: 24px; right: 24px; border-top: 2px solid var(--red); border-right: 2px solid var(--red); }
+    .corner--bl { bottom: 24px; left: 24px; border-bottom: 2px solid var(--red); border-left: 2px solid var(--red); }
+    .corner--br { bottom: 24px; right: 24px; border-bottom: 2px solid var(--red); border-right: 2px solid var(--red); }
+
+    .tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      animation: blink 2s step-end infinite;
+    }
+
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 18vw, 14rem);
+      line-height: 0.85;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo span {
+      display: block;
+      background: linear-gradient(180deg, #fff 30%, #888 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo .ves {
+      background: linear-gradient(180deg, var(--red) 0%, #7a0010 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: clamp(3rem, 10vw, 8rem);
+      letter-spacing: 0.15em;
+    }
+
+    .tagline {
+      margin-top: 1.5rem;
+      font-size: clamp(0.75rem, 2vw, 1rem);
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      color: var(--dim);
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--red);
+      padding: 0.6rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: #fff;
+    }
+
+    .stats-bar span { white-space: nowrap; }
+    .stats-bar strong { color: #fff; font-weight: bold; }
+
+    /* ── SECTION TITLES ── */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin-bottom: 3rem;
+      color: #fff;
+    }
+
+    /* ── ROSTER ── */
+    .roster {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px;
+      background: rgba(232,0,29,0.15);
+      border: 1px solid rgba(232,0,29,0.15);
+    }
+
+    .player-card {
+      background: var(--grey);
+      padding: 2rem;
+      position: relative;
+      transition: background 0.2s;
+      overflow: hidden;
+    }
+
+    .player-card:hover { background: #222; }
+
+    .player-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .player-card:hover::before { transform: scaleX(1); }
+
+    .player-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: rgba(255,255,255,0.04);
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+      user-select: none;
+    }
+
+    .player-role {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .player-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      letter-spacing: 0.05em;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .player-title {
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 1.2rem;
+    }
+
+    .player-bio {
+      font-size: 0.78rem;
+      color: var(--dim);
+      line-height: 1.7;
+    }
+
+    .player-stats {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .pstat { display: flex; flex-direction: column; }
+    .pstat-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: #fff;
+      line-height: 1;
+    }
+    .pstat-key {
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      color: var(--dim);
+      text-transform: uppercase;
+    }
+
+    /* Coach card special */
+    .player-card.coach { background: #0f0a00; }
+    .player-card.coach:hover { background: #161005; }
+    .player-card.coach .player-role { color: var(--gold); }
+    .player-card.coach::before { background: var(--gold); }
+
+    /* ── MANIFESTO ── */
+    .manifesto-section {
+      background: var(--grey);
+      padding: 6rem 2rem;
+    }
+
+    .manifesto-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .manifesto-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      color: #fff;
+    }
+
+    .manifesto-text em {
+      color: var(--red);
+      font-style: normal;
+    }
+
+    .manifesto-text .gold { color: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid #1a1a1a;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      color: var(--dim);
+    }
+
+    footer strong { color: var(--red); }
+
+    /* ── GLITCH on hover ── */
+    .logo:hover span:first-child {
+      animation: glitch 0.3s steps(2) forwards;
+    }
+
+    @keyframes glitch {
+      0%   { transform: translate(0); }
+      20%  { transform: translate(-3px, 2px); }
+      40%  { transform: translate(3px, -2px); }
+      60%  { transform: translate(-2px, 3px); }
+      80%  { transform: translate(2px, -1px); }
+      100% { transform: translate(0); }
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(5,5,5,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(232,0,29,0.2);
+    }
+
+    .nav-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.15em;
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 auto 3rem;
+      max-width: 1200px;
+      padding: 0 2rem;
+    }
+
+    .divider-line { flex: 1; height: 1px; background: rgba(232,0,29,0.2); }
+    .divider-text { font-size: 0.6rem; letter-spacing: 0.4em; color: var(--red); white-space: nowrap; }
+  </style>
 </head>
-<h1>Under construction</h1>
+<body>
+
+<nav>
+  <div class="nav-brand">VES</div>
+  <ul class="nav-links">
+    <li><a href="#roster">Roster</a></li>
+    <li><a href="#subs">Subs</a></li>
+    <li><a href="#manifesto">Manifesto</a></li>
+    <li><a href="#footer">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header>
+  <div class="bg-grid"></div>
+  <div class="corner corner--tl"></div>
+  <div class="corner corner--tr"></div>
+  <div class="corner corner--bl"></div>
+  <div class="corner corner--br"></div>
+
+  <p class="tag">▸ EST. 2024 — CLASH DIVISION — UNDEFEATED*</p>
+  <div class="logo">
+    <span>VALOR</span>
+    <span>ESPORT</span>
+    <span class="ves">VES</span>
+  </div>
+  <p class="tagline">We came. We fed. We blamed the jungler.</p>
+
+  <p class="scroll-hint">▼ SCROLL TO WITNESS GREATNESS ▼</p>
+</header>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <span>CLASH WINS <strong>?</strong></span>
+  <span>CLASH LOSSES <strong>?</strong></span>
+  <span>AVG DEATHS/GAME <strong>CLASSIFIED</strong></span>
+  <span>BARON THROWS <strong>TOO MANY</strong></span>
+  <span>WORLD RANKING <strong>TOP 5 LOCAL</strong></span>
+</div>
+
+<!-- ROSTER -->
+<section id="roster">
+  <p class="section-label">// active_roster.json</p>
+  <h2 class="section-title">THE SQUAD</h2>
+
+  <div class="roster">
+
+    <!-- COACH -->
+    <div class="player-card coach">
+      <div class="player-num">00</div>
+      <p class="player-role">Head Coach · Strategic Mastermind</p>
+      <h3 class="player-name">Saibot</h3>
+      <p class="player-title">"The one who pings but never plays"</p>
+      <p class="player-bio">Responsible for all strategy, all losses, and sending the pregame "let's go boys 🔥" message. Has a 200% winrate on paper. Real winrate is sealed under NDA.</p>
+      <div class="player-stats">
+        <div class="pstat"><span class="pstat-val">0</span><span class="pstat-key">Games played</span></div>
+        <div class="pstat"><span class="pstat-val">∞</span><span class="pstat-key">Opinions</span></div>
+        <div class="pstat"><span class="pstat-val">S+</span><span class="pstat-key">Excuse rank</span></div>
+      </div>
+    </div>
+
+    <!-- PLAYER 1 — TOPLANER -->
+    <div class="player-card">
+      <div class="player-num">01</div>
+      <p class="player-role">Toplaner · The Island</p>
+      <h3 class="player-name">Gilli</h3>
+      <p class="player-title">"Mental Coach / Self-Proclaimed IGL / Vayne Main on an Island"</p>
+      <p class="player-bio">Wins lane, loses game — every time, on schedule. Ego calibrated to Faker, mechanics calibrated to someone who just installed the game. Calls every rotation from top while refusing to make any himself. The vision of a leader. The gameplay of a liability.</p>
+      <div class="player-stats">
+        <div class="pstat"><span class="pstat-val">14</span><span class="pstat-key">Solo deaths</span></div>
+        <div class="pstat"><span class="pstat-val">Faker</span><span class="pstat-key">Self-rating</span></div>
+        <div class="pstat"><span class="pstat-val">0</span><span class="pstat-key">IGL calls heeded</span></div>
+      </div>
+    </div>
+
+    <!-- PLAYER 2 — JUNGLER -->
+    <div class="player-card">
+      <div class="player-num">02</div>
+      <p class="player-role">Jungler · Counterpicked by Everyone</p>
+      <h3 class="player-name">Black Inmate</h3>
+      <p class="player-title">"Every champ counters his / Perma-invaded / Doing his best"</p>
+      <p class="player-bio">Somehow countered by every champion in every matchup, including supports. Scientists cannot explain it. Walks into camps that have been taken. Gets invaded at level 1. Blamed by Gilli before the game even loads. Still shows up. Respect.</p>
+      <div class="player-stats">
+        <div class="pstat"><span class="pstat-val">0</span><span class="pstat-key">Favorable matchups</span></div>
+        <div class="pstat"><span class="pstat-val">∞</span><span class="pstat-key">Blame received</span></div>
+        <div class="pstat"><span class="pstat-val">Yes</span><span class="pstat-key">Your fault</span></div>
+      </div>
+    </div>
+
+    <!-- PLAYER 3 — MID -->
+    <div class="player-card">
+      <div class="player-num">03</div>
+      <p class="player-role">Midlaner · Fill Enjoyer</p>
+      <h3 class="player-name">B4lls4ck Sw4g</h3>
+      <p class="player-title">"Fill player / Same 3 champs everywhere / Held back by enemy team"</p>
+      <p class="player-bio">Technically a fill player. In practice, plays the exact same characters regardless of lane, role, or team comp. Would play Varus/Vlad/Talon in the support role if you let him. Held back not by teammates, but by the enemy team specifically, who keep showing up and doing things.</p>
+      <div class="player-stats">
+        <div class="pstat"><span class="pstat-val">3</span><span class="pstat-key">Champs in pool</span></div>
+        <div class="pstat"><span class="pstat-val">All</span><span class="pstat-key">Roles filled</span></div>
+        <div class="pstat"><span class="pstat-val">Enemy</span><span class="pstat-key">Diff</span></div>
+      </div>
+    </div>
+
+    <!-- PLAYER 4 — ADC -->
+    <div class="player-card">
+      <div class="player-num">04</div>
+      <p class="player-role">Bot Carry · Washed Veteran</p>
+      <h3 class="player-name">ond paa den bund</h3>
+      <p class="player-title">"Retired Semi-Pro / Silent Tilter / The Ghost"</p>
+      <p class="player-bio">Washed up, retired, and somehow still here. Doesn't say a word. Doesn't ping. Doesn't flame. Just silently tilts at 400 ELO below his peak and farms in a straight line. You'll know he's mad when he goes quiet. He's always quiet. We're scared.</p>
+      <div class="player-stats">
+        <div class="pstat"><span class="pstat-val">???</span><span class="pstat-key">Former peak</span></div>
+        <div class="pstat"><span class="pstat-val">0</span><span class="pstat-key">Words spoken</span></div>
+        <div class="pstat"><span class="pstat-val">Max</span><span class="pstat-key">Silent tilt</span></div>
+      </div>
+    </div>
+
+    <!-- PLAYER 5 — SUPPORT -->
+    <div class="player-card">
+      <div class="player-num">05</div>
+      <p class="player-role">Support · Culinary Department</p>
+      <h3 class="player-name">MullerGraller</h3>
+      <p class="player-title">"Cooking Specialist / Results May Vary"</p>
+      <p class="player-bio">Approaches support like a head chef: ambitious recipes, bold execution, occasionally on fire. The dish doesn't always work out, but you have to respect the vision. Has been known to roam into a 1v3 and call it "aggressive vision control." Certified kitchen chaos.</p>
+      <div class="player-stats">
+        <div class="pstat"><span class="pstat-val">15%</span><span class="pstat-key">Dishes land</span></div>
+        <div class="pstat"><span class="pstat-val">S+</span><span class="pstat-key">Ambition</span></div>
+        <div class="pstat"><span class="pstat-val">🔥</span><span class="pstat-key">Kitchen status</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SUBS -->
+<section id="subs" style="padding-top: 0;">
+  <p class="section-label">// bench.json</p>
+  <h2 class="section-title">SUBSTITUTES</h2>
+
+  <div class="roster">
+
+    <!-- SUB 1 -->
+    <div class="player-card" style="border-left: 2px solid #333;">
+      <div class="player-num">S1</div>
+      <p class="player-role">Substitute · Anti-Authority Figure</p>
+      <h3 class="player-name">CritMeDaddy</h3>
+      <p class="player-title">"Anti-IGL / Democracy enjoyer / Gilli's nightmare"</p>
+      <p class="player-bio">Refuses every single callout made by the in-game leader on principle. Doesn't matter if the call is good — if Gilli said it, CritMeDaddy is going the other direction. Somehow this works 40% of the time, which is statistically better than following the actual calls.</p>
+      <div class="player-stats">
+        <div class="pstat"><span class="pstat-val">0</span><span class="pstat-key">IGL calls followed</span></div>
+        <div class="pstat"><span class="pstat-val">40%</span><span class="pstat-key">Correct anyway</span></div>
+        <div class="pstat"><span class="pstat-val">Anarchy</span><span class="pstat-key">Playstyle</span></div>
+      </div>
+    </div>
+
+    <!-- SUB 2 -->
+    <div class="player-card" style="border-left: 2px solid #333;">
+      <div class="player-num">S2</div>
+      <p class="player-role">Substitute · Legacy Signing</p>
+      <h3 class="player-name">ass eater321</h3>
+      <p class="player-title">"ond paa den bund's kitten / Lore character"</p>
+      <p class="player-bio">Joined the roster as a package deal with ond paa den bund. The lore behind this signing remains classified. Arrived without a tryout, without a role, and without explanation. We didn't ask questions. We still don't. The org respects the mystery.</p>
+      <div class="player-stats">
+        <div class="pstat"><span class="pstat-val">?</span><span class="pstat-key">Origin</span></div>
+        <div class="pstat"><span class="pstat-val">Yes</span><span class="pstat-key">Nepotism hire</span></div>
+        <div class="pstat"><span class="pstat-val">🐱</span><span class="pstat-key">Designation</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<div class="manifesto-section" id="manifesto">
+  <div class="manifesto-inner">
+    <p class="section-label">// manifesto.txt</p>
+    <div class="manifesto-text">
+      We are <em>VALOR ESPORT.</em><br>
+      We do not surrender at 15.<br>
+      We surrender at <em>14:59.</em><br><br>
+      We are <em>not</em> a ranked team.<br>
+      We are a <span class="gold">lifestyle.</span><br><br>
+      Our enemies fear us.<br>
+      Our teammates also <em>fear us.</em><br><br>
+      <span class="gold">WE WILL EITHER WIN THE CLASH<br>
+      OR HAVE A VERY DETAILED<br>
+      POST-GAME DISCUSSION<br>
+      ABOUT WHO INTED.</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-text">* undefeated in our hearts</div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <p>© 2025 <strong>VALOR ESPORT</strong> — ALL RIGHTS RESERVED — ALL LOSSES DISPUTED</p>
+  <p style="margin-top:0.5rem;">Not affiliated with Riot Games. Affiliated with suffering.</p>
+  <p style="margin-top:0.5rem; color: #333;">*Undefeated record pending review by the top laner who left after game 1.</p>
+</footer>
+
+</body>
+</html>
