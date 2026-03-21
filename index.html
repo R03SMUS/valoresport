@@ -134,6 +134,122 @@
     }
  
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+        /* ── TOURNAMENTS ── */
+    .tournaments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: rgba(232,0,29,0.1);
+      border: 1px solid rgba(232,0,29,0.1);
+    }
+ 
+    .tourney-card {
+      background: var(--grey);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: background 0.2s;
+    }
+ 
+    .tourney-card:not(.tourney-upcoming):hover { background: #222; cursor: pointer; }
+    .tourney-card:not(.tourney-upcoming):hover .tourney-link { color: var(--red); }
+ 
+    .tourney-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--win-bright, #2ecc71);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+ 
+    .tourney-card:not(.tourney-upcoming):hover::before { transform: scaleX(1); }
+    .tourney-upcoming::before { background: #333; }
+ 
+    .tourney-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: rgba(255,255,255,0.03);
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+      user-select: none;
+    }
+ 
+    .tourney-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+    }
+ 
+    .tourney-badge {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.1em;
+      line-height: 1;
+    }
+ 
+    .tourney-badge.win     { color: #2ecc71; }
+    .tourney-badge.upcoming { color: #333; font-size: 1.2rem; letter-spacing: 0.2em; }
+ 
+    .tourney-date {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      color: var(--dim);
+    }
+ 
+    .tourney-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+      color: #fff;
+      line-height: 1;
+    }
+ 
+    .tourney-upcoming .tourney-name { color: #444; }
+ 
+    .tourney-sub {
+      font-size: 0.65rem;
+      color: var(--dim);
+      letter-spacing: 0.1em;
+    }
+ 
+    .tourney-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #222;
+    }
+ 
+    .tourney-result {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      color: #2ecc71;
+      text-transform: uppercase;
+    }
+ 
+    .tourney-result.pending { color: #333; }
+ 
+    .tourney-link {
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--dim);
+      transition: color 0.2s;
+    }
+ 
+    .tourney-link.muted { color: #2a2a2a; }
  
     /* ── STATS BAR ── */
     .stats-bar {
@@ -156,6 +272,7 @@
       padding: 6rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
+      scroll-margin-top: 64px;
     }
  
     .section-label {
@@ -278,6 +395,7 @@
     .manifesto-section {
       background: var(--grey);
       padding: 6rem 2rem;
+      scroll-margin-top: 64px;
     }
  
     .manifesto-inner {
@@ -381,6 +499,7 @@
       background: var(--darker);
       border-top: 1px solid rgba(232,0,29,0.15);
       padding: 6rem 2rem;
+      scroll-margin-top: 64px;
     }
  
     .contact-inner {
@@ -541,6 +660,7 @@
   <ul class="nav-links">
     <li><a href="#roster">Roster</a></li>
     <li><a href="#subs">Subs</a></li>
+    <li><a href="#tournaments">Tournaments</a></li>
     <li><a href="#manifesto">Manifesto</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -554,15 +674,13 @@
   <div class="corner corner--bl"></div>
   <div class="corner corner--br"></div>
 
-  <p class="tag">▸ EST. 2024 — CLASH DIVISION — UNDEFEATED*</p>
+  <p class="tag">▸ EST. 2020 — CLASH DIVISION — UNDEFEATED*</p>
   <div class="logo">
     <span>VALOR</span>
     <span>ESPORT</span>
     <span class="ves">VES</span>
   </div>
   <p class="tagline">We came. We fed. We blamed the jungler.</p>
-
-  <p class="scroll-hint">▼ SCROLL TO WITNESS GREATNESS ▼</p>
 </header>
 
 <!-- STATS BAR -->
@@ -721,6 +839,44 @@
   </div>
 </section>
 
+<!-- TOURNAMENTS -->
+<section id="tournaments" style="padding-top: 0;">
+  <p class="section-label">// tournaments.log</p>
+  <h2 class="section-title">TOURNAMENTS</h2>
+ 
+  <div class="tournaments-grid">
+ 
+    <a href="clash1.html" class="tourney-card">
+      <div class="tourney-num">01</div>
+      <div class="tourney-top">
+        <span class="tourney-badge win">3 — 0</span>
+        <span class="tourney-date">2026</span>
+      </div>
+      <h3 class="tourney-name">CLASH — BRACKET STAGE</h3>
+      <p class="tourney-sub">Season 2025 · Summoner's Rift</p>
+      <div class="tourney-footer">
+        <span class="tourney-result">VICTORY</span>
+        <span class="tourney-link">View scoreboard →</span>
+      </div>
+    </a>
+ 
+    <div class="tourney-card tourney-upcoming">
+      <div class="tourney-num">02</div>
+      <div class="tourney-top">
+        <span class="tourney-badge upcoming">TBD</span>
+        <span class="tourney-date">—</span>
+      </div>
+      <h3 class="tourney-name">NEXT CLASH</h3>
+      <p class="tourney-sub">Coming soon · Stay scared</p>
+      <div class="tourney-footer">
+        <span class="tourney-result pending">PENDING</span>
+        <span class="tourney-link muted">Results not yet</span>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+
 <!-- MANIFESTO -->
 <div class="manifesto-section" id="manifesto">
   <div class="manifesto-inner">
@@ -815,7 +971,7 @@
 
 <!-- FOOTER -->
 <footer id="footer">
-  <p>© 2025 <strong>VALOR ESPORT</strong> — ALL RIGHTS RESERVED — ALL LOSSES DISPUTED</p>
+  <p>© 2026 <strong>VALOR ESPORT</strong> — ALL RIGHTS RESERVED — ALL LOSSES DISPUTED</p>
   <p style="margin-top:0.5rem;">Not affiliated with Riot Games. Affiliated with suffering.</p>
   <p style="margin-top:0.5rem; color: #333;">*Undefeated record pending review by the top laner who left after game 1.</p>
 </footer>
