@@ -713,146 +713,87 @@
 <section id="roster">
   <p class="section-label">// active_roster.json</p>
   <h2 class="section-title">THE SQUAD</h2>
-
+ 
   <div class="roster">
-
-    <!-- COACH -->
-    <div class="player-card coach">
-      <div class="player-num">00</div>
-      <p class="player-role">Head Coach · Strategic Mastermind</p>
-      <h3 class="player-name">Saibot</h3>
-      <p class="player-title">"The one who pings but never plays"</p>
-      <p class="player-bio">Responsible for all strategy, all losses, and sending the pregame "let's go boys 🔥" message. Has a 200% winrate on paper. Real winrate is sealed under NDA.</p>
-      <div class="player-stats">
-        <div class="pstat"><span class="pstat-val">0</span><span class="pstat-key">Games played</span></div>
-        <div class="pstat"><span class="pstat-val">∞</span><span class="pstat-key">Opinions</span></div>
-        <div class="pstat"><span class="pstat-val">S+</span><span class="pstat-key">Excuse rank</span></div>
-      </div>
-    </div>
-
-    <!-- PLAYER 1 — TOPLANER -->
-    <div class="player-card">
-      <div class="player-num">01</div>
-      <p class="player-role">Toplaner · The Island</p>
-      <h3 class="player-name">Gilli</h3>
-      <p class="player-title">"Mental Coach / Self-Proclaimed IGL / Vayne Main on an Island"</p>
-      <p class="player-bio">Wins lane, loses game — every time, on schedule. Ego calibrated to Faker, mechanics calibrated to someone who just installed the game. Calls every rotation from top while refusing to make any himself. The vision of a leader. The gameplay of a liability.</p>
-      <div class="player-stats">
-        <div class="pstat"><span class="pstat-val">14</span><span class="pstat-key">Solo deaths</span></div>
-        <div class="pstat"><span class="pstat-val">Faker</span><span class="pstat-key">Self-rating</span></div>
-        <div class="pstat"><span class="pstat-val">0</span><span class="pstat-key">IGL calls heeded</span></div>
-      </div>
-    </div>
-
-    <!-- PLAYER 2 — JUNGLER -->
-    <div class="player-card">
-      <div class="player-num">02</div>
-      <p class="player-role">Jungler · Counterpicked by Everyone</p>
-      <h3 class="player-name">Black Inmate</h3>
-      <p class="player-title">"Every champ counters his / Perma-invaded / Doing his best"</p>
-      <p class="player-bio">Somehow countered by every champion in every matchup, including supports. Scientists cannot explain it. Walks into camps that have been taken. Gets invaded at level 1. Blamed by Gilli before the game even loads. Still shows up. Respect.</p>
-      <div class="player-stats">
-        <div class="pstat"><span class="pstat-val">0</span><span class="pstat-key">Favorable matchups</span></div>
-        <div class="pstat"><span class="pstat-val">∞</span><span class="pstat-key">Blame received</span></div>
-        <div class="pstat"><span class="pstat-val">Yes</span><span class="pstat-key">Your fault</span></div>
-      </div>
-    </div>
-
-    <!-- PLAYER 3 — MID -->
-    <div class="player-card">
-      <div class="player-num">03</div>
-      <p class="player-role">Midlaner · Fill Enjoyer</p>
-      <h3 class="player-name">B4lls4ck Sw4g</h3>
-      <p class="player-title">"Fill player / Same 3 champs everywhere / Held back by enemy team"</p>
-      <p class="player-bio">Technically a fill player. In practice, plays the exact same characters regardless of lane, role, or team comp. Would play Varus/Vlad/Talon in the support role if you let him. Held back not by teammates, but by the enemy team specifically, who keep showing up and doing things.</p>
-      <div class="player-stats">
-        <div class="pstat"><span class="pstat-val">3</span><span class="pstat-key">Champs in pool</span></div>
-        <div class="pstat"><span class="pstat-val">All</span><span class="pstat-key">Roles filled</span></div>
-        <div class="pstat"><span class="pstat-val">Enemy</span><span class="pstat-key">Diff</span></div>
-      </div>
-    </div>
-
-    <!-- PLAYER 4 — ADC -->
-    <div class="player-card">
-      <div class="player-num">04</div>
-      <p class="player-role">Bot Carry · Washed Veteran</p>
-      <h3 class="player-name">ond paa den bund</h3>
-      <p class="player-title">"Retired Semi-Pro / Silent Tilter / The Ghost"</p>
-      <p class="player-bio">Washed up, retired, and somehow still here. Doesn't say a word. Doesn't ping. Doesn't flame. Just silently tilts at 400 ELO below his peak and farms in a straight line. You'll know he's mad when he goes quiet. He's always quiet. We're scared.</p>
-      <div class="player-stats">
-        <div class="pstat"><span class="pstat-val">???</span><span class="pstat-key">Former peak</span></div>
-        <div class="pstat"><span class="pstat-val">0</span><span class="pstat-key">Words spoken</span></div>
-        <div class="pstat"><span class="pstat-val">Max</span><span class="pstat-key">Silent tilt</span></div>
-      </div>
-    </div>
-
-    <!-- PLAYER 5 — SUPPORT -->
-    <div class="player-card">
-      <div class="player-num">05</div>
-      <p class="player-role">Support · Culinary Department</p>
-      <h3 class="player-name">MullerGraller</h3>
-      <p class="player-title">"Cooking Specialist / Results May Vary"</p>
-      <p class="player-bio">Approaches support like a head chef: ambitious recipes, bold execution, occasionally on fire. The dish doesn't always work out, but you have to respect the vision. Has been known to roam into a 1v3 and call it "aggressive vision control." Certified kitchen chaos.</p>
-      <div class="player-stats">
-        <div class="pstat"><span class="pstat-val">15%</span><span class="pstat-key">Dishes land</span></div>
-        <div class="pstat"><span class="pstat-val">S+</span><span class="pstat-key">Ambition</span></div>
-        <div class="pstat"><span class="pstat-val">🔥</span><span class="pstat-key">Kitchen status</span></div>
-      </div>
-    </div>
-
+    <player-card coach num="00"
+      role="Head Coach · Strategic Mastermind"
+      name="Saibot"
+      title='"The one who pings but never plays"'
+      bio="Responsible for all strategy, all losses, and sending the pregame &quot;let's go boys 🔥&quot; message. Has a 200% winrate on paper. Real winrate is sealed under NDA."
+      stats='[{"val":"0","key":"Games played"},{"val":"∞","key":"Opinions"},{"val":"S+","key":"Excuse rank"}]'>
+    </player-card>
+ 
+    <player-card num="01"
+      role="Toplaner · The Island"
+      name="Gilli"
+      title='"Mental Coach / Self-Proclaimed IGL / Vayne Main on an Island"'
+      bio="Wins lane, loses game — every time, on schedule. Ego calibrated to Faker, mechanics calibrated to someone who just installed the game. Calls every rotation from top while refusing to make any himself. The vision of a leader. The gameplay of a liability."
+      stats='[{"val":"14","key":"Solo deaths"},{"val":"Faker","key":"Self-rating"},{"val":"0","key":"IGL calls heeded"}]'>
+    </player-card>
+ 
+    <player-card num="02"
+      role="Jungler · Counterpicked by Everyone"
+      name="Black Inmate"
+      title='"Every champ counters his / Perma-invaded / Doing his best"'
+      bio="Somehow countered by every champion in every matchup, including supports. Scientists cannot explain it. Walks into camps that have been taken. Gets invaded at level 1. Blamed by Gilli before the game even loads. Still shows up. Respect."
+      stats='[{"val":"0","key":"Favorable matchups"},{"val":"∞","key":"Blame received"},{"val":"Yes","key":"Your fault"}]'>
+    </player-card>
+ 
+    <player-card num="03"
+      role="Midlaner · Fill Enjoyer"
+      name="Ballsack Swag"
+      title='"Fill player / Same 3 champs everywhere / Held back by enemy team"'
+      bio="Technically a fill player. In practice, plays the exact same characters regardless of lane, role, or team comp. Would play Yasuo in the support role if you let him. Held back not by teammates, but by the enemy team specifically, who keep showing up and doing things."
+      stats='[{"val":"3","key":"Champs in pool"},{"val":"All","key":"Roles filled"},{"val":"Enemy","key":"Diff"}]'>
+    </player-card>
+ 
+    <player-card num="04"
+      role="Bot Carry · Washed Veteran"
+      name="ond paa den bund"
+      title='"Retired Semi-Pro / Silent Tilter / The Ghost"'
+      bio="Washed up, retired, and somehow still here. Doesn't say a word. Doesn't ping. Doesn't flame. Just silently tilts at 400 ELO below his peak and farms in a straight line. You'll know he's mad when he goes quiet. He's always quiet. We're scared."
+      stats='[{"val":"???","key":"Former peak"},{"val":"0","key":"Words spoken"},{"val":"Max","key":"Silent tilt"}]'>
+    </player-card>
+ 
+    <player-card num="05"
+      role="Support · Culinary Department"
+      name="MullerGraller"
+      title='"Cooking Specialist / Results May Vary"'
+      bio="Approaches support like a head chef: ambitious recipes, bold execution, occasionally on fire. The dish doesn't always work out, but you have to respect the vision. Has been known to roam into a 1v3 and call it &quot;aggressive vision control.&quot; Certified kitchen chaos."
+      stats='[{"val":"50%","key":"Dishes land"},{"val":"S+","key":"Ambition"},{"val":"🔥","key":"Kitchen status"}]'>
+    </player-card>
   </div>
 </section>
-
+ 
 <!-- SUBS -->
 <section id="subs" style="padding-top: 0;">
-  <p class="section-label">// bench.json</p>
+  <p class="section-label">// bench.json — "we aren't always the same 5"</p>
   <h2 class="section-title">SUBSTITUTES</h2>
-
+ 
   <div class="roster">
-
-    <!-- SUB 1 -->
-    <div class="player-card" style="border-left: 2px solid #333;">
-      <div class="player-num">S1</div>
-      <p class="player-role">Substitute · Anti-Authority Figure</p>
-      <h3 class="player-name">CritMeDaddy</h3>
-      <p class="player-title">"Anti-IGL / Democracy enjoyer / Gilli's nightmare"</p>
-      <p class="player-bio">Refuses every single callout made by the in-game leader on principle. Doesn't matter if the call is good — if Gilli said it, CritMeDaddy is going the other direction. Somehow this works 40% of the time, which is statistically better than following the actual calls.</p>
-      <div class="player-stats">
-        <div class="pstat"><span class="pstat-val">0</span><span class="pstat-key">IGL calls followed</span></div>
-        <div class="pstat"><span class="pstat-val">40%</span><span class="pstat-key">Correct anyway</span></div>
-        <div class="pstat"><span class="pstat-val">Anarchy</span><span class="pstat-key">Playstyle</span></div>
-      </div>
-    </div>
-
-    <!-- SUB 2 -->
-    <div class="player-card" style="border-left: 2px solid #333;">
-      <div class="player-num">S2</div>
-      <p class="player-role">Substitute · Legacy Signing</p>
-      <h3 class="player-name">ass eater321</h3>
-      <p class="player-title">"ond paa den bund's kitten / Lore character"</p>
-      <p class="player-bio">Joined the roster as a package deal with ond paa den bund. The lore behind this signing remains classified. Arrived without a tryout, without a role, and without explanation. We didn't ask questions. We still don't. The org respects the mystery.</p>
-      <div class="player-stats">
-        <div class="pstat"><span class="pstat-val">?</span><span class="pstat-key">Origin</span></div>
-        <div class="pstat"><span class="pstat-val">Yes</span><span class="pstat-key">Nepotism hire</span></div>
-        <div class="pstat"><span class="pstat-val">🐱</span><span class="pstat-key">Designation</span></div>
-      </div>
-    </div>
-
-    <!-- SUB 3 -->
-    <div class="player-card redacted-card" style="border-left: 2px solid #333;">
-      <div class="player-num">S3</div>
-      <p class="player-role">Substitute · <span class="redact">████ ████ ████</span></p>
-      <h3 class="player-name redact-name">Spacewaff1e</h3>
-      <p class="player-title redact">████ ████ ██████ / ████ █████ ████ █ ████</p>
-      <p class="player-bio"><span class="redact-block">██████ ██████████ █████ ████ ████████████ ██████████ ████ ████ ███████████ ████████. ████ █████ █████ ███████ ██████ ████████ ████ ████ ████ █████ ████████.</span> <span style="color:var(--dim)">— [IDENTITY PENDING ANNOUNCEMENT]</span></p>
-      <div class="player-stats">
-        <div class="pstat"><span class="pstat-val redact">██</span><span class="pstat-key">Classified</span></div>
-        <div class="pstat"><span class="pstat-val redact">██</span><span class="pstat-key">Classified</span></div>
-        <div class="pstat"><span class="pstat-val" style="color:var(--gold)">SOON™</span><span class="pstat-key">Status</span></div>
-      </div>
-      <div class="redacted-stamp">REDACTED</div>
-    </div>
-
+    <player-card sub num="S1"
+      role="Substitute · Anti-Authority Figure"
+      name="CritMeDaddy"
+      title='"Anti-IGL / Democracy enjoyer / Gilli&apos;s nightmare"'
+      bio="Refuses every single callout made by the in-game leader on principle. Doesn't matter if the call is good — if Gilli said it, CritMeDaddy is going the other direction. Somehow this works 40% of the time, which is statistically better than following the actual calls."
+      stats='[{"val":"0","key":"IGL calls followed"},{"val":"40%","key":"Correct anyway"},{"val":"Anarchy","key":"Playstyle"}]'>
+    </player-card>
+ 
+    <player-card sub redacted num="S2"
+      role="Substitute · [REDACTED]"
+      name="Spacewaff1e"
+      title="████ ████ ██████ / ████ █████ ████ █ ████"
+      bio="██████ ██████████ █████ ████ ████████████ ██████████ ████ ████ ███████████ ████████. — [IDENTITY PENDING ANNOUNCEMENT]"
+      stats='[{"val":"██","key":"Classified"},{"val":"██","key":"Classified"},{"val":"SOON™","key":"Status"}]'>
+    </player-card>
+ 
+    <player-card sub num="S3"
+      role="Substitute · Legacy Signing"
+      name="ass eater321"
+      title='"ond paa den bund&apos;s kitten / Lore character"'
+      bio="Joined the roster as a package deal with ond paa den bund. The lore behind this signing remains classified. Arrived without a tryout, without a role, and without explanation. We didn't ask questions. We still don't. The org respects the mystery."
+      stats='[{"val":"?","key":"Origin"},{"val":"Yes","key":"Nepotism hire"},{"val":"🐱","key":"Designation"}]'>
+    </player-card>
   </div>
 </section>
 
@@ -920,7 +861,6 @@
   <div class="divider-line"></div>
 </div>
 
-<!-- CONTACT -->
 <!-- CONTACT -->
 <div class="contact-section" id="contact">
   <div class="contact-inner">
@@ -1050,6 +990,156 @@
       btn.disabled = false;
     }
   }
+</script>
+
+<script>
+class PlayerCard extends HTMLElement {
+  connectedCallback() {
+    const name     = this.getAttribute('name')  || 'REDACTED';
+    const num      = this.getAttribute('num')   || '00';
+    const role     = this.getAttribute('role')  || 'Unknown';
+    const title    = this.getAttribute('title') || '';
+    const bio      = this.getAttribute('bio')   || '';
+    const stats    = JSON.parse(this.getAttribute('stats') || '[]');
+    const isCoach  = this.hasAttribute('coach');
+    const isSub    = this.hasAttribute('sub');
+    const isRedact = this.hasAttribute('redacted');
+ 
+    const shadow = this.attachShadow({ mode: 'open' });
+ 
+    shadow.innerHTML = `
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&display=swap');
+ 
+        :host { display: block; }
+ 
+        .card {
+          background: ${isCoach ? '#0f0a00' : '#1a1a1a'};
+          padding: 2rem;
+          position: relative;
+          overflow: hidden;
+          transition: background 0.2s;
+          height: 100%;
+          box-sizing: border-box;
+          ${isSub ? 'border-left: 2px solid #333;' : ''}
+        }
+ 
+        .card:hover { background: ${isCoach ? '#161005' : '#222'}; }
+ 
+        .card::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 2px;
+          background: ${isCoach ? '#c89b3c' : '#e8001d'};
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s ease;
+        }
+ 
+        .card:hover::before { transform: scaleX(1); }
+ 
+        .num {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 5rem;
+          line-height: 1;
+          color: rgba(255,255,255,0.04);
+          position: absolute;
+          top: 0.5rem;
+          right: 1rem;
+          user-select: none;
+        }
+ 
+        .role {
+          font-size: 0.6rem;
+          letter-spacing: 0.35em;
+          color: ${isCoach ? '#c89b3c' : '#e8001d'};
+          text-transform: uppercase;
+          margin: 0 0 0.5rem;
+        }
+ 
+        .name {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 2.4rem;
+          letter-spacing: 0.05em;
+          color: ${isRedact ? '#555' : '#fff'};
+          line-height: 1;
+          margin: 0 0 0.3rem;
+        }
+ 
+        .title {
+          font-size: 0.72rem;
+          color: #c89b3c;
+          letter-spacing: 0.1em;
+          margin: 0 0 1.2rem;
+        }
+ 
+        .bio {
+          font-size: 0.78rem;
+          color: #666;
+          line-height: 1.7;
+          margin: 0;
+        }
+ 
+        .stats {
+          margin-top: 1.2rem;
+          display: flex;
+          gap: 1.5rem;
+        }
+ 
+        .pstat { display: flex; flex-direction: column; }
+ 
+        .pstat-val {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 1.6rem;
+          color: ${isRedact ? '#2a2a2a' : '#fff'};
+          line-height: 1;
+        }
+ 
+        .pstat-key {
+          font-size: 0.55rem;
+          letter-spacing: 0.25em;
+          color: #555;
+          text-transform: uppercase;
+        }
+ 
+        /* Redacted stamp */
+        .stamp {
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%) rotate(-18deg);
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 3.5rem;
+          letter-spacing: 0.3em;
+          color: rgba(232,0,29,0.12);
+          border: 4px solid rgba(232,0,29,0.12);
+          padding: 0.1em 0.4em;
+          pointer-events: none;
+          white-space: nowrap;
+          user-select: none;
+        }
+      </style>
+ 
+      <div class="card">
+        <div class="num">${num}</div>
+        <p class="role">${role}</p>
+        <h3 class="name">${name}</h3>
+        <p class="title">${title}</p>
+        <p class="bio">${bio}</p>
+        <div class="stats">
+          ${stats.map(s => `
+            <div class="pstat">
+              <span class="pstat-val">${s.val}</span>
+              <span class="pstat-key">${s.key}</span>
+            </div>
+          `).join('')}
+        </div>
+        ${isRedact ? '<div class="stamp">REDACTED</div>' : ''}
+      </div>
+    `;
+  }
+}
+customElements.define('player-card', PlayerCard);
 </script>
 </body>
 </html>
