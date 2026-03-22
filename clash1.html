@@ -56,7 +56,11 @@
       letter-spacing: 0.15em;
       color: var(--red);
       text-decoration: none;
+      display: flex;
+      align-items: center;
     }
+
+    .nav-brand img { height: 36px; width: auto; display: block; }
 
     .nav-back {
       font-size: 0.65rem;
@@ -87,71 +91,20 @@
       background-size: 60px 60px;
     }
 
-    .hero-event {
-      font-size: 0.65rem;
-      letter-spacing: 0.4em;
-      color: var(--win-bright);
-      margin-bottom: 0.8rem;
-      position: relative;
-    }
+    .hero-event  { font-size: 0.65rem; letter-spacing: 0.4em; color: var(--win-bright); margin-bottom: 0.8rem; position: relative; }
+    .hero-title  { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 12vw, 9rem); line-height: 0.9; color: #fff; position: relative; }
+    .hero-score  { font-family: 'Bebas Neue', sans-serif; font-size: clamp(5rem, 18vw, 13rem); line-height: 1; color: var(--win-bright); text-shadow: 0 0 60px rgba(46,204,113,0.3); letter-spacing: 0.1em; position: relative; }
+    .hero-sub    { font-size: 0.75rem; letter-spacing: 0.25em; color: var(--dim); margin-top: 0.5rem; position: relative; }
 
-    .hero-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(4rem, 12vw, 9rem);
-      line-height: 0.9;
-      color: #fff;
-      position: relative;
-    }
+    .page { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 6rem; }
 
-    .hero-score {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(5rem, 18vw, 13rem);
-      line-height: 1;
-      color: var(--win-bright);
-      text-shadow: 0 0 60px rgba(46,204,113,0.3);
-      letter-spacing: 0.1em;
-      position: relative;
-    }
+    .section-label { font-size: 0.6rem; letter-spacing: 0.4em; color: var(--red); text-transform: uppercase; margin-bottom: 0.4rem; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); color: #fff; letter-spacing: 0.05em; margin-bottom: 2rem; }
 
-    .hero-sub {
-      font-size: 0.75rem;
-      letter-spacing: 0.25em;
-      color: var(--dim);
-      margin-top: 0.5rem;
-      position: relative;
-    }
-
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 4rem 2rem 6rem;
-    }
-
-    .section-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.4em;
-      color: var(--red);
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-    }
-
-    .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      color: #fff;
-      letter-spacing: 0.05em;
-      margin-bottom: 2rem;
-    }
-
+    /* ── GAME BLOCK (rendered by component) ── */
     .game-block { margin-bottom: 5rem; }
 
-    .game-header {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 1.2rem;
-      flex-wrap: wrap;
-    }
+    .game-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
 
     .game-badge {
       font-family: 'Bebas Neue', sans-serif;
@@ -162,11 +115,7 @@
       color: var(--win-bright);
     }
 
-    .game-meta {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      color: var(--dim);
-    }
+    .game-meta { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--dim); }
 
     .summary-bar {
       display: flex;
@@ -183,44 +132,22 @@
     .sbar-key { font-size: 0.52rem; letter-spacing: 0.25em; color: var(--dim); text-transform: uppercase; }
 
     .scoreboard { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
-
     .scoreboard thead tr { border-bottom: 1px solid rgba(232,0,29,0.3); }
-
     .scoreboard th {
-      font-size: 0.55rem;
-      letter-spacing: 0.3em;
-      color: var(--red);
-      text-transform: uppercase;
-      padding: 0.5rem 0.8rem;
-      text-align: left;
-      font-weight: normal;
-      white-space: nowrap;
+      font-size: 0.55rem; letter-spacing: 0.3em; color: var(--red);
+      text-transform: uppercase; padding: 0.5rem 0.8rem;
+      text-align: left; font-weight: normal; white-space: nowrap;
     }
-
     .scoreboard th.center, .scoreboard td.center { text-align: center; }
-
-    .scoreboard td {
-      padding: 0.85rem 0.8rem;
-      border-bottom: 1px solid #161616;
-      vertical-align: middle;
-    }
-
+    .scoreboard td { padding: 0.85rem 0.8rem; border-bottom: 1px solid #161616; vertical-align: middle; }
     .scoreboard tbody tr:hover td { background: #141414; }
 
     .player-cell { display: flex; flex-direction: column; gap: 0.15rem; }
-    .player-ign { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.05em; color: #fff; }
+    .player-ign  { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.05em; color: #fff; }
     .player-champ { font-size: 0.6rem; color: var(--dim); letter-spacing: 0.1em; }
 
-    .role-tag {
-      font-size: 0.5rem;
-      letter-spacing: 0.2em;
-      color: var(--dim);
-      border: 1px solid #2a2a2a;
-      padding: 0.15rem 0.4rem;
-      text-transform: uppercase;
-    }
+    .role-tag { font-size: 0.5rem; letter-spacing: 0.2em; color: var(--dim); border: 1px solid #2a2a2a; padding: 0.15rem 0.4rem; text-transform: uppercase; }
 
-    /* KDA — filled by JS */
     .kda-display { display: flex; flex-direction: column; align-items: center; gap: 0.1rem; }
     .kda-nums { font-size: 0.85rem; }
     .kda-nums .k { color: #fff; }
@@ -236,28 +163,15 @@
     .stat-val.mvp-val   { color: var(--win-bright); }
 
     .mvp-row td { background: rgba(200,155,60,0.05) !important; }
-    .mvp-badge {
-      font-size: 0.48rem;
-      letter-spacing: 0.2em;
-      background: var(--gold);
-      color: #000;
-      padding: 0.12rem 0.35rem;
-      vertical-align: middle;
-      margin-left: 0.4rem;
-    }
+    .mvp-badge { font-size: 0.48rem; letter-spacing: 0.2em; background: var(--gold); color: #000; padding: 0.12rem 0.35rem; vertical-align: middle; margin-left: 0.4rem; }
 
     .row-win { border-left: 2px solid rgba(46,204,113,0.25); }
 
     .back-cta { text-align: center; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid #1a1a1a; }
     .back-link {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.25em;
-      color: var(--red);
-      text-decoration: none;
-      border: 1px solid rgba(232,0,29,0.3);
-      padding: 0.7rem 2rem;
-      transition: background 0.2s, color 0.2s;
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.25em;
+      color: var(--red); text-decoration: none; border: 1px solid rgba(232,0,29,0.3);
+      padding: 0.7rem 2rem; transition: background 0.2s, color 0.2s;
     }
     .back-link:hover { background: var(--red); color: #fff; }
 
@@ -270,7 +184,7 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-brand"><img src="logo2.png" style="height: 36px;"></a>
+  <a href="index.html" class="nav-brand"><img src="logo.png" /></a>
   <a href="index.html" class="nav-back">← Back to org</a>
 </nav>
 
@@ -285,272 +199,149 @@
   <p class="section-label">// match_history.log</p>
   <h2 class="section-title">GAME LOG</h2>
 
-  <!-- ══ GAME 1 ══ set data-k / data-d / data-a — KDA auto-calculates -->
-  <div class="game-block">
-    <div class="game-header">
-      <span class="game-badge">GAME 1 — WIN</span>
-      <div class="game-meta">DURATION: 31:35</div>
-    </div>
-    <div class="summary-bar">
-      <div class="sbar-item"><span class="sbar-val">31:35</span><span class="sbar-key">Duration</span></div>
-      <div class="sbar-item"><span class="sbar-val">34</span><span class="sbar-key">Team kills</span></div>
-      <div class="sbar-item"><span class="sbar-val">8</span><span class="sbar-key">Towers</span></div>
-      <div class="sbar-item"><span class="sbar-val">2</span><span class="sbar-key">Dragons</span></div>
-      <div class="sbar-item"><span class="sbar-val">1</span><span class="sbar-key">Baron</span></div>
-    </div>
-    <table class="scoreboard">
-      <thead><tr>
-        <th>Player</th>
-        <th class="hide-mobile">Role</th>
-        <th>Champion</th>
-        <th class="center">K / D / A</th>
-        <th class="center hide-mobile">CS</th>
-        <th class="center hide-mobile">Dmg</th>
-        <th class="center hide-mobile">Gold</th>
-      </tr></thead>
-      <tbody>
-        <tr class="row-win" data-k="6" data-d="3" data-a="11">
-          <td><div class="player-cell"><span class="player-ign">Gilli</span><span class="player-champ">Tahm Kench</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">Top</span></td>
-          <td class="stat-val">Tahm Kench</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val">212</span></td>
-          <td class="center hide-mobile"><span class="stat-val">29,704</span></td>
-          <td class="center hide-mobile"><span class="stat-val">14.5k</span></td>
-        </tr>
-        <tr class="row-win mvp-row" data-k="8" data-d="6" data-a="11">
-          <td><div class="player-cell"><span class="player-ign">B4LLS4CK SW4G<span class="mvp-badge">MVP</span></span><span class="player-champ">Graves</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">JG</span></td>
-          <td class="stat-val">Graves</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val highlight">226</span></td>
-          <td class="center hide-mobile"><span class="stat-val mvp-val">34,854</span></td>
-          <td class="center hide-mobile"><span class="stat-val">14.8k</span></td>
-        </tr>
-        <tr class="row-win" data-k="10" data-d="6" data-a="11">
-          <td><div class="player-cell"><span class="player-ign">Spacewaff1e</span><span class="player-champ">Xerath</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">Mid</span></td>
-          <td class="stat-val">Xerath</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val">160</span></td>
-          <td class="center hide-mobile"><span class="stat-val">27,870</span></td>
-          <td class="center hide-mobile"><span class="stat-val">12.7k</span></td>
-        </tr>
-        <tr class="row-win" data-k="10" data-d="9" data-a="10">
-          <td><div class="player-cell"><span class="player-ign">ond paa den bund</span><span class="player-champ">Kaisa</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">ADC</span></td>
-          <td class="stat-val">Kaisa</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val">256</span></td>
-          <td class="center hide-mobile"><span class="stat-val">30409</span></td>
-          <td class="center hide-mobile"><span class="stat-val">17.6k</span></td>
-        </tr>
-        <tr class="row-win" data-k="0" data-d="7" data-a="23">
-          <td><div class="player-cell"><span class="player-ign">Black Inmate</span><span class="player-champ">Thresh</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">Sup</span></td>
-          <td class="stat-val">Thresh</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val">40</span></td>
-          <td class="center hide-mobile"><span class="stat-val">11,240</span></td>
-          <td class="center hide-mobile"><span class="stat-val">9.6k</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  HOW TO ADD A GAME                                           ║
+  ║                                                              ║
+  ║  Copy one <clash-game> tag below and paste it here.         ║
+  ║  Fill in:                                                    ║
+  ║    num      — Game number (1, 2, 3...)                       ║
+  ║    result   — WIN or LOSS                                    ║
+  ║    duration — e.g. 31:35                                     ║
+  ║    kills / towers / dragons / baron — team summary stats     ║
+  ║    players  — JSON array, one object per player:             ║
+  ║      name, role, champ, k, d, a, cs, dmg, gold, mvp (bool)  ║
+  ╚══════════════════════════════════════════════════════════════╝
+  -->
 
-  <!-- ══ GAME 2 ══ -->
-  <div class="game-block">
-    <div class="game-header">
-      <span class="game-badge">GAME 2 — WIN</span>
-      <div class="game-meta">DURATION: 28:52</div>
-    </div>
-    <div class="summary-bar">
-      <div class="sbar-item"><span class="sbar-val">28:52</span><span class="sbar-key">Duration</span></div>
-      <div class="sbar-item"><span class="sbar-val">45</span><span class="sbar-key">Team kills</span></div>
-      <div class="sbar-item"><span class="sbar-val">9</span><span class="sbar-key">Towers</span></div>
-      <div class="sbar-item"><span class="sbar-val">3</span><span class="sbar-key">Dragons</span></div>
-      <div class="sbar-item"><span class="sbar-val">1</span><span class="sbar-key">Baron</span></div>
-    </div>
-    <table class="scoreboard">
-      <thead><tr>
-        <th>Player</th>
-        <th class="hide-mobile">Role</th>
-        <th>Champion</th>
-        <th class="center">K / D / A</th>
-        <th class="center hide-mobile">CS</th>
-        <th class="center hide-mobile">Dmg</th>
-        <th class="center hide-mobile">Gold</th>
-      </tr></thead>
-      <tbody>
-        <tr class="row-win" data-k="2" data-d="6" data-a="15">
-          <td><div class="player-cell"><span class="player-ign">Gilli</span><span class="player-champ">Tahm Kench</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">Top</span></td>
-          <td class="stat-val">Tahm Kench</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val">158</span></td>
-          <td class="center hide-mobile"><span class="stat-val">26,075</span></td>
-          <td class="center hide-mobile"><span class="stat-val">11.1k</span></td>
-        </tr>
-        <tr class="row-win mvp-row" data-k="17" data-d="4" data-a="12">
-          <td><div class="player-cell"><span class="player-ign">B4LLS4CK SW4G<span class="mvp-badge">MVP</span></span><span class="player-champ">Talon</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">JG</span></td>
-          <td class="stat-val">Talon</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val highlight">223</span></td>
-          <td class="center hide-mobile"><span class="stat-val mvp-val">37,068</span></td>
-          <td class="center hide-mobile"><span class="stat-val">16.7k</span></td>
-        </tr>
-        <tr class="row-win" data-k="3" data-d="3" data-a="9">
-          <td><div class="player-cell"><span class="player-ign">Spacewaff1e</span><span class="player-champ">Xerath</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">Mid</span></td>
-          <td class="stat-val">Xerath</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val">194</span></td>
-          <td class="center hide-mobile"><span class="stat-val">13,989</span></td>
-          <td class="center hide-mobile"><span class="stat-val">10.1k</span></td>
-        </tr>
-        <tr class="row-win" data-k="20" data-d="4" data-a="8">
-          <td><div class="player-cell"><span class="player-ign">ond paa den bund</span><span class="player-champ">Tristana</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">ADC</span></td>
-          <td class="stat-val">Tristana</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val">243</span></td>
-          <td class="center hide-mobile"><span class="stat-val">44,576</span></td>
-          <td class="center hide-mobile"><span class="stat-val">19.9k</span></td>
-        </tr>
-        <tr class="row-win" data-k="3" data-d="5" data-a="27">
-          <td><div class="player-cell"><span class="player-ign">Black Inmate</span><span class="player-champ">Thresh</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">Sup</span></td>
-          <td class="stat-val">Thresh</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val">27</span></td>
-          <td class="center hide-mobile"><span class="stat-val">9,908</span></td>
-          <td class="center hide-mobile"><span class="stat-val">10.2k</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <clash-game
+    num="1" result="WIN" duration="31:35"
+    kills="34" towers="8" dragons="2" baron="1"
+    players='[
+      { "name": "Gilli",           "role": "Top", "champ": "Tahm Kench", "k": 6,  "d": 3, "a": 11, "cs": 212, "dmg": "29,704", "gold": "14.5k" },
+      { "name": "B4LLS4CK SW4G",   "role": "JG",  "champ": "Graves",     "k": 8,  "d": 6, "a": 11, "cs": 226, "dmg": "34,854", "gold": "14.8k", "mvp": true },
+      { "name": "Spacewaff1e",     "role": "Mid", "champ": "Xerath",     "k": 10, "d": 6, "a": 11, "cs": 160, "dmg": "27,870", "gold": "12.7k" },
+      { "name": "ond paa den bund","role": "ADC", "champ": "Kaisa",      "k": 10, "d": 9, "a": 10, "cs": 256, "dmg": "30,409", "gold": "17.6k" },
+      { "name": "Black Inmate",    "role": "Sup", "champ": "Thresh",     "k": 0,  "d": 7, "a": 23, "cs": 40,  "dmg": "11,240", "gold": "9.6k"  }
+    ]'>
+  </clash-game>
 
-  <!-- ══ GAME 3 ══ -->
-  <div class="game-block">
-    <div class="game-header">
-      <span class="game-badge">GAME 3 — WIN</span>
-      <div class="game-meta">DURATION: 29:52</div>
-    </div>
-    <div class="summary-bar">
-      <div class="sbar-item"><span class="sbar-val">29:52</span><span class="sbar-key">Duration</span></div>
-      <div class="sbar-item"><span class="sbar-val">28</span><span class="sbar-key">Team kills</span></div>
-      <div class="sbar-item"><span class="sbar-val">8</span><span class="sbar-key">Towers</span></div>
-      <div class="sbar-item"><span class="sbar-val">2</span><span class="sbar-key">Dragons</span></div>
-      <div class="sbar-item"><span class="sbar-val">0</span><span class="sbar-key">Baron</span></div>
-    </div>
-    <table class="scoreboard">
-      <thead><tr>
-        <th>Player</th>
-        <th class="hide-mobile">Role</th>
-        <th>Champion</th>
-        <th class="center">K / D / A</th>
-        <th class="center hide-mobile">CS</th>
-        <th class="center hide-mobile">Dmg</th>
-        <th class="center hide-mobile">Gold</th>
-      </tr></thead>
-      <tbody>
-        <tr class="row-win" data-k="5" data-d="4" data-a="5">
-          <td><div class="player-cell"><span class="player-ign">Gilli</span><span class="player-champ">Kennen</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">Top</span></td>
-          <td class="stat-val">Kennen</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val">184</span></td>
-          <td class="center hide-mobile"><span class="stat-val">28,646</span></td>
-          <td class="center hide-mobile"><span class="stat-val">12.9k</span></td>
-        </tr>
-        <tr class="row-win mvp-row" data-k="7" data-d="3" data-a="15">
-          <td><div class="player-cell"><span class="player-ign">B4LLS4CK SW4G<span class="mvp-badge">MVP</span></span><span class="player-champ">Zac</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">JG</span></td>
-          <td class="stat-val">Zac</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val highlight">184</span></td>
-          <td class="center hide-mobile"><span class="stat-val mvp-val">20,193</span></td>
-          <td class="center hide-mobile"><span class="stat-val">12.9k</span></td>
-        </tr>
-        <tr class="row-win" data-k="1" data-d="9" data-a="5">
-          <td><div class="player-cell"><span class="player-ign">Spacewaff1e</span><span class="player-champ">Vel'Koz</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">Mid</span></td>
-          <td class="stat-val">Vel'Koz</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val">185</span></td>
-          <td class="center hide-mobile"><span class="stat-val">16,537</span></td>
-          <td class="center hide-mobile"><span class="stat-val">8.6k</span></td>
-        </tr>
-        <tr class="row-win" data-k="14" data-d="5" data-a="7">
-          <td><div class="player-cell"><span class="player-ign">ond paa den bund</span><span class="player-champ">Zeri</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">ADC</span></td>
-          <td class="stat-val">Zeri</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val">265</span></td>
-          <td class="center hide-mobile"><span class="stat-val">47,720</span></td>
-          <td class="center hide-mobile"><span class="stat-val">19.0k</span></td>
-        </tr>
-        <tr class="row-win" data-k="5" data-d="4" data-a="18">
-          <td><div class="player-cell"><span class="player-ign">Black Inmate</span><span class="player-champ">Blitzcrank</span></div></td>
-          <td class="hide-mobile"><span class="role-tag">Sup</span></td>
-          <td class="stat-val">Blitzcrank</td>
-          <td class="center kda-cell"></td>
-          <td class="center hide-mobile"><span class="stat-val">25</span></td>
-          <td class="center hide-mobile"><span class="stat-val">8,403</span></td>
-          <td class="center hide-mobile"><span class="stat-val">7.7k</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <clash-game
+    num="2" result="WIN" duration="28:52"
+    kills="45" towers="9" dragons="3" baron="1"
+    players='[
+      { "name": "Gilli",           "role": "Top", "champ": "Tahm Kench", "k": 2,  "d": 6, "a": 15, "cs": 158, "dmg": "26,075", "gold": "11.1k" },
+      { "name": "B4LLS4CK SW4G",   "role": "JG",  "champ": "Talon",     "k": 17, "d": 4, "a": 12, "cs": 223, "dmg": "37,068", "gold": "16.7k", "mvp": true },
+      { "name": "Spacewaff1e",     "role": "Mid", "champ": "Xerath",     "k": 3,  "d": 3, "a": 9,  "cs": 194, "dmg": "13,989", "gold": "10.1k" },
+      { "name": "ond paa den bund","role": "ADC", "champ": "Tristana",   "k": 20, "d": 4, "a": 8,  "cs": 243, "dmg": "44,576", "gold": "19.9k" },
+      { "name": "Black Inmate",    "role": "Sup", "champ": "Thresh",     "k": 3,  "d": 5, "a": 27, "cs": 27,  "dmg": "9,908",  "gold": "10.2k" }
+    ]'>
+  </clash-game>
+
+  <clash-game
+    num="3" result="WIN" duration="29:52"
+    kills="28" towers="8" dragons="2" baron="0"
+    players='[
+      { "name": "Gilli",           "role": "Top", "champ": "Kennen",     "k": 5,  "d": 4, "a": 5,  "cs": 184, "dmg": "28,646", "gold": "12.9k" },
+      { "name": "B4LLS4CK SW4G",   "role": "JG",  "champ": "Zac",       "k": 7,  "d": 3, "a": 15, "cs": 184, "dmg": "20,193", "gold": "12.9k", "mvp": true },
+      { "name": "Spacewaff1e",     "role": "Mid", "champ": "VelKoz",    "k": 1,  "d": 9, "a": 5,  "cs": 185, "dmg": "16,537", "gold": "8.6k"  },
+      { "name": "ond paa den bund","role": "ADC", "champ": "Zeri",       "k": 14, "d": 5, "a": 7,  "cs": 265, "dmg": "47,720", "gold": "19.0k" },
+      { "name": "Black Inmate",    "role": "Sup", "champ": "Blitzcrank", "k": 5,  "d": 4, "a": 18, "cs": 25,  "dmg": "8,403",  "gold": "7.7k"  }
+    ]'>
+  </clash-game>
 
   <div class="back-cta">
     <a href="index.html#tournaments" class="back-link">← BACK TO VALOR ESPORT</a>
   </div>
 </div>
 
-<!--
-  ╔══════════════════════════════════════════════════╗
-  ║  HOW TO ADD A NEW GAME                           ║
-  ║                                                  ║
-  ║  1. Copy any game-block div                      ║
-  ║  2. Paste before the back-cta div                ║
-  ║  3. Update per row:                              ║
-  ║     data-k / data-d / data-a  ← KDA auto-calcs   ║
-  ║     Player name, champion, CS, Dmg, Gold         ║
-  ║  4. Add class "mvp-row" + MVP badge to MVP row   ║
-  ╚══════════════════════════════════════════════════╝
--->
-
 <script>
-  document.querySelectorAll('tr[data-k]').forEach(row => {
-    const k = parseInt(row.dataset.k);
-    const d = parseInt(row.dataset.d);
-    const a = parseInt(row.dataset.a);
+  function calcKDA(k, d, a) {
+    if (d === 0) return { text: 'Perfect KDA', cls: 'perfect' };
+    const ratio = (k + a) / d;
+    return {
+      text: ratio.toFixed(2) + ' KDA',
+      cls:  ratio >= 5 ? 'perfect' : ratio >= 3 ? 'great' : ''
+    };
+  }
 
-    const ratio = d === 0 ? Infinity : (k + a) / d;
+  class ClashGame extends HTMLElement {
+    connectedCallback() {
+      const num      = this.getAttribute('num');
+      const result   = this.getAttribute('result') || 'WIN';
+      const duration = this.getAttribute('duration');
+      const kills    = this.getAttribute('kills');
+      const towers   = this.getAttribute('towers');
+      const dragons  = this.getAttribute('dragons');
+      const baron    = this.getAttribute('baron');
+      const players  = JSON.parse(this.getAttribute('players') || '[]');
 
-    let ratioText, ratioClass;
-    if (d === 0) {
-      ratioText  = 'Perfect KDA';
-      ratioClass = 'perfect';
-    } else {
-      ratioText  = ratio.toFixed(2) + ' KDA';
-      ratioClass = ratio >= 5 ? 'perfect' : ratio >= 3 ? 'great' : '';
+      const isWin = result.toUpperCase() === 'WIN';
+
+      const summaryItems = [
+        { val: duration, key: 'Duration' },
+        { val: kills,    key: 'Team kills' },
+        { val: towers,   key: 'Towers' },
+        { val: dragons,  key: 'Dragons' },
+        { val: baron,    key: 'Baron' },
+      ];
+
+      const rows = players.map(p => {
+        const kda = calcKDA(p.k, p.d, p.a);
+        return `
+          <tr class="row-win${p.mvp ? ' mvp-row' : ''}">
+            <td>
+              <div class="player-cell">
+                <span class="player-ign">${p.name}${p.mvp ? '<span class="mvp-badge">MVP</span>' : ''}</span>
+                <span class="player-champ">${p.champ}</span>
+              </div>
+            </td>
+            <td class="hide-mobile"><span class="role-tag">${p.role}</span></td>
+            <td class="stat-val">${p.champ}</td>
+            <td class="center">
+              <div class="kda-display">
+                <span class="kda-nums">
+                  <span class="k">${p.k}</span><span class="sep"> / </span><span class="d">${p.d}</span><span class="sep"> / </span><span class="a">${p.a}</span>
+                </span>
+                <span class="kda-ratio ${kda.cls}">${kda.text}</span>
+              </div>
+            </td>
+            <td class="center hide-mobile"><span class="stat-val${p.mvp ? ' highlight' : ''}">${p.cs}</span></td>
+            <td class="center hide-mobile"><span class="stat-val${p.mvp ? ' mvp-val' : ''}">${p.dmg}</span></td>
+            <td class="center hide-mobile"><span class="stat-val">${p.gold}</span></td>
+          </tr>`;
+      }).join('');
+
+      this.innerHTML = `
+        <div class="game-block">
+          <div class="game-header">
+            <span class="game-badge">GAME ${num} — ${result}</span>
+            <div class="game-meta">DURATION: ${duration}</div>
+          </div>
+          <div class="summary-bar">
+            ${summaryItems.map(i => `
+              <div class="sbar-item">
+                <span class="sbar-val">${i.val}</span>
+                <span class="sbar-key">${i.key}</span>
+              </div>`).join('')}
+          </div>
+          <table class="scoreboard">
+            <thead><tr>
+              <th>Player</th>
+              <th class="hide-mobile">Role</th>
+              <th>Champion</th>
+              <th class="center">K / D / A</th>
+              <th class="center hide-mobile">CS</th>
+              <th class="center hide-mobile">Dmg</th>
+              <th class="center hide-mobile">Gold</th>
+            </tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>`;
     }
+  }
 
-    row.querySelector('.kda-cell').innerHTML =
-      '<div class="kda-display">' +
-        '<span class="kda-nums">' +
-          '<span class="k">' + k + '</span>' +
-          '<span class="sep"> / </span>' +
-          '<span class="d">' + d + '</span>' +
-          '<span class="sep"> / </span>' +
-          '<span class="a">' + a + '</span>' +
-        '</span>' +
-        '<span class="kda-ratio ' + ratioClass + '">' + ratioText + '</span>' +
-      '</div>';
-  });
+  customElements.define('clash-game', ClashGame);
 </script>
 
 </body>
