@@ -904,6 +904,7 @@
 </div>
 
 <!-- CONTACT -->
+<!-- CONTACT -->
 <div class="contact-section" id="contact">
   <div class="contact-inner">
     <p class="section-label">// recruitment_open.exe</p>
@@ -937,15 +938,15 @@
       <div class="contact-form-wrap">
         <div class="form-row">
           <label class="form-label" for="cf-name">SUMMONER NAME</label>
-          <input class="form-input" id="cf-name" type="text" placeholder="YourIGN123" autocomplete="off" />
+          <input class="form-input" id="cf-name" name="name" type="text" placeholder="YourIGN123" autocomplete="off" />
         </div>
         <div class="form-row">
           <label class="form-label" for="cf-email">EMAIL</label>
-          <input class="form-input" id="cf-email" type="email" placeholder="you@loser.gg" autocomplete="off" />
+          <input class="form-input" id="cf-email" name="email" type="email" placeholder="you@loser.gg" autocomplete="off" />
         </div>
         <div class="form-row">
           <label class="form-label" for="cf-subject">SUBJECT</label>
-          <select class="form-input form-select" id="cf-subject">
+          <select class="form-input form-select" id="cf-subject" name="subject">
             <option value="">— SELECT REASON FOR CONTACT —</option>
             <option>Sponsorship Inquiry</option>
             <option>Tryout Request (lol)</option>
@@ -958,9 +959,9 @@
         </div>
         <div class="form-row">
           <label class="form-label" for="cf-msg">MESSAGE</label>
-          <textarea class="form-input form-textarea" id="cf-msg" placeholder="Keep it short. Our coach has the attention span of a support ward."></textarea>
+          <textarea class="form-input form-textarea" id="cf-msg" name="message" placeholder="Keep it short. Our coach has the attention span of a support ward."></textarea>
         </div>
-        <button class="form-btn" onclick="handleSubmit()">
+        <button class="form-btn" type="button" onclick="handleSubmit()">
           <span id="btn-text">TRANSMIT MESSAGE</span>
         </button>
         <p class="form-disclaimer">By submitting you acknowledge that VES is not responsible for any emotional damage caused by reading our replies.</p>
@@ -976,34 +977,61 @@
   <p style="margin-top:0.5rem; color: #333;">*Undefeated record pending review by the top laner who left after game 1.</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  function handleSubmit() {
+  // ── Replace these three values with yours from emailjs.com ──
+  const EJS_PUBLIC_KEY  = '6ZiacWAyBWuY_D6Fc';
+  const EJS_SERVICE_ID  = 'service_kfcp0on';
+  const EJS_TEMPLATE_ID = 'template_gh7f579';
+ 
+  emailjs.init({ publicKey: EJS_PUBLIC_KEY });
+ 
+  async function handleSubmit() {
+    const btn     = document.querySelector('.form-btn');
+    const btnText = document.getElementById('btn-text');
+ 
     const name    = document.getElementById('cf-name').value.trim();
     const email   = document.getElementById('cf-email').value.trim();
     const subject = document.getElementById('cf-subject').value;
     const msg     = document.getElementById('cf-msg').value.trim();
-    const btn     = document.querySelector('.form-btn');
  
+    // Validation
     if (!name || !email || !msg) {
-      btn.textContent = 'FILL IN THE FIELDS, BRONZE';
+      btnText.textContent = 'FILL IN THE FIELDS, BRONZE';
       btn.style.background = '#7a0010';
       setTimeout(() => {
-        btn.textContent = 'TRANSMIT MESSAGE';
+        btnText.textContent = 'TRANSMIT MESSAGE';
         btn.style.background = '';
       }, 2000);
       return;
     }
  
-    const mailtoSubject = encodeURIComponent('[VES CONTACT] ' + (subject || 'General Inquiry'));
-    const mailtoBody    = encodeURIComponent(
-      'From: ' + name + '\n' +
-      'Subject: ' + (subject || 'N/A') + '\n\n' +
-      msg
-    );
-    window.location.href = 'mailto:vesinquries@gmail.com?subject=' + mailtoSubject + '&body=' + mailtoBody;
+    btnText.textContent = 'UPLOADING TO MAINFRAME...';
+    btn.disabled = true;
  
-    btn.classList.add('sent');
-    document.getElementById('btn-text').textContent = 'MESSAGE TRANSMITTED ✓';
+    try {
+      await emailjs.send(EJS_SERVICE_ID, EJS_TEMPLATE_ID, {
+        name:    name,
+        email:   email,
+        subject: subject || 'No subject selected',
+        message: msg,
+      });
+ 
+      btn.style.background = '#00ff41';
+      btn.style.color = '#000';
+      btnText.textContent = 'MESSAGE TRANSMITTED ✓';
+ 
+      // Reset fields
+      document.getElementById('cf-name').value    = '';
+      document.getElementById('cf-email').value   = '';
+      document.getElementById('cf-subject').value = '';
+      document.getElementById('cf-msg').value     = '';
+ 
+    } catch (error) {
+      btnText.textContent = 'TRANSMIT FAILED (SERVER DIFF)';
+      btn.style.background = '#7a0010';
+      btn.disabled = false;
+    }
   }
 </script>
 </body>
