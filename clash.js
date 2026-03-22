@@ -1,4 +1,3 @@
-
   function calcKDA(k, d, a) {
     if (d === 0) return { text: 'Perfect KDA', cls: 'perfect' };
     const ratio = (k + a) / d;
@@ -7,7 +6,7 @@
       cls:  ratio >= 5 ? 'perfect' : ratio >= 3 ? 'great' : ''
     };
   }
-
+  
   class ClashGame extends HTMLElement {
     connectedCallback() {
       const num      = this.getAttribute('num');
@@ -18,9 +17,9 @@
       const dragons  = this.getAttribute('dragons');
       const baron    = this.getAttribute('baron');
       const players  = JSON.parse(this.getAttribute('players') || '[]');
-
+ 
       const isWin = result.toUpperCase() === 'WIN';
-
+ 
       const summaryItems = [
         { val: duration, key: 'Duration' },
         { val: kills,    key: 'Team kills' },
@@ -28,11 +27,12 @@
         { val: dragons,  key: 'Dragons' },
         { val: baron,    key: 'Baron' },
       ];
-
+ 
       const rows = players.map(p => {
         const kda = calcKDA(p.k, p.d, p.a);
+        const rowClass = isWin ? 'row-win' : 'row-loss';
         return `
-          <tr class="row-win${p.mvp ? ' mvp-row' : ''}">
+          <tr class="${rowClass}${p.mvp ? ' mvp-row' : ''}">
             <td>
               <div class="player-cell">
                 <span class="player-ign">${p.name}${p.mvp ? '<span class="mvp-badge">MVP</span>' : ''}</span>
@@ -54,14 +54,14 @@
             <td class="center hide-mobile"><span class="stat-val">${p.gold}</span></td>
           </tr>`;
       }).join('');
-
+ 
       this.innerHTML = `
         <div class="game-block">
           <div class="game-header">
-            <span class="game-badge">GAME ${num} — ${result}</span>
+            <span class="game-badge${isWin ? '' : ' loss'}">GAME ${num} — ${result}</span>
             <div class="game-meta">DURATION: ${duration}</div>
           </div>
-          <div class="summary-bar">
+          <div class="summary-bar${isWin ? '' : ' loss'}">
             ${summaryItems.map(i => `
               <div class="sbar-item">
                 <span class="sbar-val">${i.val}</span>

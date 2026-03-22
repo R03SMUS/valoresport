@@ -1,4 +1,4 @@
-:root {
+    :root {
       --red: #e8001d;
       --gold: #c89b3c;
       --darker: #050505;
@@ -8,10 +8,10 @@
       --win-bright: #2ecc71;
       --loss-bright: #e74c3c;
     }
-
+ 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
+ 
     body {
       background: var(--darker);
       color: var(--text);
@@ -19,7 +19,7 @@
       overflow-x: hidden;
       cursor: crosshair;
     }
-
+ 
     body::after {
       content: '';
       position: fixed;
@@ -28,7 +28,7 @@
       pointer-events: none;
       z-index: 9999;
     }
-
+ 
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -41,7 +41,7 @@
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(232,0,29,0.2);
     }
-
+ 
     .nav-brand {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.4rem;
@@ -51,9 +51,9 @@
       display: flex;
       align-items: center;
     }
-
+ 
     .nav-brand img { height: 36px; width: auto; display: block; }
-
+ 
     .nav-back {
       font-size: 0.65rem;
       letter-spacing: 0.3em;
@@ -63,7 +63,7 @@
       transition: color 0.2s;
     }
     .nav-back:hover { color: var(--red); }
-
+ 
     .results-hero {
       padding: 8rem 2rem 4rem;
       text-align: center;
@@ -72,7 +72,7 @@
       position: relative;
       overflow: hidden;
     }
-
+ 
     .results-hero::before {
       content: '';
       position: absolute;
@@ -82,22 +82,22 @@
         linear-gradient(90deg, rgba(46,204,113,0.04) 1px, transparent 1px);
       background-size: 60px 60px;
     }
-
+ 
     .hero-event  { font-size: 0.65rem; letter-spacing: 0.4em; color: var(--win-bright); margin-bottom: 0.8rem; position: relative; }
     .hero-title  { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 12vw, 9rem); line-height: 0.9; color: #fff; position: relative; }
     .hero-score  { font-family: 'Bebas Neue', sans-serif; font-size: clamp(5rem, 18vw, 13rem); line-height: 1; color: var(--win-bright); text-shadow: 0 0 60px rgba(46,204,113,0.3); letter-spacing: 0.1em; position: relative; }
     .hero-sub    { font-size: 0.75rem; letter-spacing: 0.25em; color: var(--dim); margin-top: 0.5rem; position: relative; }
-
+ 
     .page { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 6rem; }
-
+ 
     .section-label { font-size: 0.6rem; letter-spacing: 0.4em; color: var(--red); text-transform: uppercase; margin-bottom: 0.4rem; }
     .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); color: #fff; letter-spacing: 0.05em; margin-bottom: 2rem; }
-
+ 
     /* ── GAME BLOCK (rendered by component) ── */
     .game-block { margin-bottom: 5rem; }
-
+ 
     .game-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
-
+ 
     .game-badge {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 0.85rem;
@@ -106,9 +106,9 @@
       border: 1px solid rgba(46,204,113,0.4);
       color: var(--win-bright);
     }
-
+ 
     .game-meta { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--dim); }
-
+ 
     .summary-bar {
       display: flex;
       gap: 2rem;
@@ -118,11 +118,11 @@
       border: 1px solid #1e1e1e;
       background: var(--grey);
     }
-
+ 
     .sbar-item { display: flex; flex-direction: column; }
     .sbar-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: #fff; line-height: 1; }
     .sbar-key { font-size: 0.52rem; letter-spacing: 0.25em; color: var(--dim); text-transform: uppercase; }
-
+ 
     .scoreboard { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
     .scoreboard thead tr { border-bottom: 1px solid rgba(232,0,29,0.3); }
     .scoreboard th {
@@ -133,13 +133,13 @@
     .scoreboard th.center, .scoreboard td.center { text-align: center; }
     .scoreboard td { padding: 0.85rem 0.8rem; border-bottom: 1px solid #161616; vertical-align: middle; }
     .scoreboard tbody tr:hover td { background: #141414; }
-
+ 
     .player-cell { display: flex; flex-direction: column; gap: 0.15rem; }
     .player-ign  { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.05em; color: #fff; }
     .player-champ { font-size: 0.6rem; color: var(--dim); letter-spacing: 0.1em; }
-
+ 
     .role-tag { font-size: 0.5rem; letter-spacing: 0.2em; color: var(--dim); border: 1px solid #2a2a2a; padding: 0.15rem 0.4rem; text-transform: uppercase; }
-
+ 
     .kda-display { display: flex; flex-direction: column; align-items: center; gap: 0.1rem; }
     .kda-nums { font-size: 0.85rem; }
     .kda-nums .k { color: #fff; }
@@ -149,16 +149,25 @@
     .kda-ratio { font-size: 0.62rem; color: var(--dim); }
     .kda-ratio.perfect { color: var(--win-bright); }
     .kda-ratio.great   { color: var(--gold); }
-
+ 
     .stat-val { color: var(--text); }
     .stat-val.highlight { color: var(--gold); }
     .stat-val.mvp-val   { color: var(--win-bright); }
-
+ 
     .mvp-row td { background: rgba(200,155,60,0.05) !important; }
     .mvp-badge { font-size: 0.48rem; letter-spacing: 0.2em; background: var(--gold); color: #000; padding: 0.12rem 0.35rem; vertical-align: middle; margin-left: 0.4rem; }
-
-    .row-win { border-left: 2px solid rgba(46,204,113,0.25); }
-
+ 
+    .row-win  { border-left: 2px solid rgba(46,204,113,0.25); }
+    .row-loss { border-left: 2px solid rgba(231,76,60,0.25); }
+ 
+    .game-badge.loss {
+      border-color: rgba(231,76,60,0.4);
+      color: var(--loss-bright);
+    }
+ 
+    .scoreboard tbody .row-loss td { color: #999; }
+    .scoreboard tbody .row-loss .player-ign { color: #bbb; }
+ 
     .back-cta { text-align: center; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid #1a1a1a; }
     .back-link {
       font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.25em;
@@ -166,7 +175,7 @@
       padding: 0.7rem 2rem; transition: background 0.2s, color 0.2s;
     }
     .back-link:hover { background: var(--red); color: #fff; }
-
+ 
     @media (max-width: 600px) {
       .scoreboard th, .scoreboard td { padding: 0.5rem 0.4rem; }
       .hide-mobile { display: none; }
