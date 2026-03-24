@@ -1,293 +1,401 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VALOR ESPORT — WE DO NOT LOSE (SOMETIMES)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Oswald:wght@700&display=swap" rel="stylesheet" />
-  <link href="index.css" rel="stylesheet" />
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>VALOR ESPORT — WE DO NOT LOSE (SOMETIMES)</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Oswald:wght@700&display=swap"
+            rel="stylesheet"
+        />
+        <link href="index.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav>
+            <div class="nav-brand">
+                <img src="logo2.png" style="height: 36px" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="#roster">Roster</a></li>
+                <li><a href="#subs">Subs</a></li>
+                <li><a href="#tournaments">Tournaments</a></li>
+                <li><a href="#manifesto">Manifesto</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
-<nav>
-  <div class="nav-brand"><img src="logo2.png" style="height: 36px;"/></div>
-  <ul class="nav-links">
-    <li><a href="#roster">Roster</a></li>
-    <li><a href="#subs">Subs</a></li>
-    <li><a href="#tournaments">Tournaments</a></li>
-    <li><a href="#manifesto">Manifesto</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+        <!-- HERO -->
+        <header>
+            <div class="bg-grid"></div>
+            <div class="corner corner--tl"></div>
+            <div class="corner corner--tr"></div>
+            <div class="corner corner--bl"></div>
+            <div class="corner corner--br"></div>
 
-<!-- HERO -->
-<header>
-  <div class="bg-grid"></div>
-  <div class="corner corner--tl"></div>
-  <div class="corner corner--tr"></div>
-  <div class="corner corner--bl"></div>
-  <div class="corner corner--br"></div>
+            <p class="tag">▸ EST. 2020 — CLASH DIVISION — UNDEFEATED*</p>
+            <div class="logo">
+                <span>VALOR</span>
+                <span>ESPORT</span>
+                <span class="ves">VES</span>
+            </div>
+            <p class="tagline">We came. We fed. We blamed the jungler.</p>
+        </header>
 
-  <p class="tag">▸ EST. 2020 — CLASH DIVISION — UNDEFEATED*</p>
-  <div class="logo">
-    <span>VALOR</span>
-    <span>ESPORT</span>
-    <span class="ves">VES</span>
-  </div>
-  <p class="tagline">We came. We fed. We blamed the jungler.</p>
-</header>
-
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <span>CLASH WINS <strong>Inifite</strong></span>
-  <span>CLASH LOSSES <strong>-1</strong></span>
-  <span>AVG DEATHS/GAME <strong>CLASSIFIED</strong></span>
-  <span>BARON THROWS <strong>TOO MANY</strong></span>
-  <span>WORLD RANKING <strong>TOP 5 LOCAL</strong></span>
-</div>
-
-<!-- ROSTER -->
-<section id="roster">
-  <p class="section-label">// active_roster.json</p>
-  <h2 class="section-title">THE SQUAD</h2>
- 
-  <div class="roster">
-    <player-card coach num="00"
-      role="Head Coach · Strategic Mastermind"
-      name="Saibot"
-      title='"The one who pings but never plays"'
-      bio="Responsible for all strategy, all losses, and sending the pregame &quot;let's go boys 🔥&quot; message. Has a 200% winrate on paper. Real winrate is sealed under NDA."
-      stats='[{"val":"0","key":"Games played"},{"val":"∞","key":"Opinions"},{"val":"S+","key":"Excuse rank"}]'>
-    </player-card>
- 
-    <player-card num="01"
-      role="The Island"
-      name="Gilli"
-      title='"Mental Coach / Self-Proclaimed IGL / Vayne Main on an Island"'
-      bio="Wins lane, loses game — every time, on schedule. Ego calibrated to Faker, mechanics calibrated to someone who just installed the game. Calls every rotation from top while refusing to make any himself. The vision of a leader. The gameplay of a liability."
-      stats='[{"val":"14","key":"Solo deaths"},{"val":"Faker","key":"Self-rating"},{"val":"0","key":"IGL calls heeded"}]'>
-    </player-card>
- 
-    <player-card sub num="02"
-      role="Anti-Authority Figure"
-      name="CritMeDaddy"
-      title='"Anti-IGL / Democracy enjoyer / Gilli&apos;s nightmare"'
-      bio="Refuses every single callout made by the in-game leader on principle. Doesn't matter if the call is good — if Gilli said it, CritMeDaddy is going the other direction. Somehow this works 40% of the time, which is statistically better than following the actual calls."
-      stats='[{"val":"0","key":"IGL calls followed"},{"val":"40%","key":"Correct anyway"},{"val":"Anarchy","key":"Playstyle"}]'>
-    </player-card>
-
- 
-    <player-card num="03"
-      role="Fill Enjoyer"
-      name="B4lls4ck Sw4g"
-      title='"Fill player / Same 3 champs everywhere / Held back by enemy team"'
-      bio="Technically a fill player. In practice, plays the exact same characters regardless of lane, role, or team comp. Held back not by teammates, but by the enemy team specifically, who keep showing up and doing things."
-      stats='[{"val":"3","key":"Champs in pool"},{"val":"All","key":"Roles filled"},{"val":"Enemy","key":"Diff"}]'>
-    </player-card>
- 
-    <player-card num="04"
-      role="Washed Veteran"
-      name="MULLER LOVER123"
-      title='"Retired Semi-Pro / Silent Tilter / The Ghost"'
-      bio="Washed up, retired, and somehow still here. Doesn't say a word. Doesn't ping. Doesn't flame. Just silently tilts at 400 ELO below his peak and farms in a straight line. You'll know he's mad when he goes quiet. He's always quiet. We're scared."
-      stats='[{"val":"???","key":"Former peak"},{"val":"0","key":"Words spoken"},{"val":"Max","key":"Silent tilt"}]'>
-    </player-card>
- 
-    <player-card num="05"
-      role="Culinary Department"
-      name="MullerGraller"
-      title='"Cooking Specialist / Results May Vary"'
-      bio="Approaches support like a head chef: ambitious recipes, bold execution, occasionally on fire. The dish doesn't always work out, but you have to respect the vision. Has been known to roam into a 1v3 and call it &quot;aggressive vision control.&quot; Certified kitchen chaos."
-      stats='[{"val":"50%","key":"Dishes land"},{"val":"S+","key":"Ambition"},{"val":"🔥","key":"Kitchen status"}]'>
-    </player-card>
-  </div>
-</section>
- 
-<!-- SUBS -->
-<section id="subs" style="padding-top: 0;">
-  <p class="section-label">// bench.json — "we aren't always the same 5"</p>
-  <h2 class="section-title">SUBSTITUTES</h2>
- 
-  <div class="roster">
-    
-    <player-card num="S1"
-      role="Substitute · Counterpicked by Everyone"
-      name="Black Inmate"
-      title='"Every champ counters his / Perma-invaded / Doing his best"'
-      bio="Somehow countered by every champion in every matchup, including supports. Scientists cannot explain it. Walks into camps that have been taken. Gets invaded at level 1. Blamed by Gilli before the game even loads. Still shows up. Respect."
-      stats='[{"val":"0","key":"Favorable matchups"},{"val":"∞","key":"Blame received"},{"val":"Yes","key":"Your fault"}]'>
-    </player-card>
- 
-    <player-card sub redacted num="S2"
-      role="Substitute · [REDACTED]"
-      name="Spacewaff1e"
-      title="████ ████ ██████ / ████ █████ ████ █ ████"
-      bio="██████ ██████████ █████ ████ ████████████ ██████████ ████ ████ ███████████ ████████. — [IDENTITY PENDING ANNOUNCEMENT]"
-      stats='[{"val":"██","key":"Classified"},{"val":"██","key":"Classified"},{"val":"SOON™","key":"Status"}]'>
-    </player-card>
- 
-    <player-card sub num="S3"
-      role="Substitute · Legacy Signing"
-      name="ass eater321"
-      title='"MULLER LOVER123&apos;s kitten / Lore character"'
-      bio="Joined the roster as a package deal with ond paa den bund. The lore behind this signing remains classified. Arrived without a tryout, without a role, and without explanation. We didn't ask questions. We still don't. The org respects the mystery."
-      stats='[{"val":"?","key":"Origin"},{"val":"Yes","key":"Nepotism hire"},{"val":"🐱","key":"Designation"}]'>
-    </player-card>
-  </div>
-</section>
-
-<!-- TOURNAMENTS -->
-<section id="tournaments" style="padding-top: 0;">
-  <p class="section-label">// tournaments.log</p>
-  <h2 class="section-title">TOURNAMENTS</h2>
- 
-  <div class="tournaments-grid">
- 
-    <a href="clash1.html" class="tourney-card">
-      <div class="tourney-num">01</div>
-      <div class="tourney-top">
-        <span class="tourney-badge win">3 — 0</span>
-        <span class="tourney-date">2026</span>
-      </div>
-      <h3 class="tourney-name">CLASH — BRACKET STAGE</h3>
-      <p class="tourney-sub">Season 2026 · Summoner's Rift</p>
-      <div class="tourney-footer">
-        <span class="tourney-result">VICTORY</span>
-        <span class="tourney-link">View scoreboard →</span>
-      </div>
-    </a>
-
-    <a href="clash2.html" class="tourney-card">
-      <div class="tourney-num">02</div>
-      <div class="tourney-top">
-        <span class="tourney-badge win">3 — 0</span>
-        <span class="tourney-date">2026</span>
-      </div>
-      <h3 class="tourney-name">CLASH — BRACKET STAGE</h3>
-      <p class="tourney-sub">Season 2026 · Summoner's Rift</p>
-      <div class="tourney-footer">
-        <span class="tourney-result">VICTORY</span>
-        <span class="tourney-link">View scoreboard →</span>
-      </div>
-    </a>
- 
-    <div class="tourney-card tourney-upcoming">
-      <div class="tourney-num">03</div>
-      <div class="tourney-top">
-        <span class="tourney-badge upcoming">TBD</span>
-        <span class="tourney-date">—</span>
-      </div>
-      <h3 class="tourney-name">NEXT CLASH</h3>
-      <p class="tourney-sub">Coming soon · Stay scared</p>
-      <div class="tourney-footer">
-        <span class="tourney-result pending">PENDING</span>
-        <span class="tourney-link muted">Results not yet</span>
-      </div>
-    </div>
- 
-  </div>
-</section>
-
-<!-- MANIFESTO -->
-<div class="manifesto-section" id="manifesto">
-  <div class="manifesto-inner">
-    <p class="section-label">// manifesto.txt</p>
-    <div class="manifesto-text">
-      We are <em>VALOR ESPORT.</em><br>
-      We do not surrender at 15.<br>
-      We surrender at <em>14:59.</em><br><br>
-      We are <em>not</em> a ranked team.<br>
-      We are a <span class="gold">lifestyle.</span><br><br>
-      Our enemies fear us.<br>
-      Our teammates also <em>fear us.</em><br><br>
-      <span class="gold">WE WILL EITHER WIN THE CLASH<br>
-      OR HAVE A VERY DETAILED<br>
-      POST-GAME DISCUSSION<br>
-      ABOUT WHO INTED.</span>
-    </div>
-  </div>
-</div>
-
-<div class="divider">
-  <div class="divider-line"></div>
-  <div class="divider-text">* undefeated in our hearts</div>
-  <div class="divider-line"></div>
-</div>
-
-<!-- CONTACT -->
-<div class="contact-section" id="contact">
-  <div class="contact-inner">
-    <p class="section-label">// recruitment_open.exe</p>
-    <h2 class="section-title" style="color:#fff; margin-bottom:0.5rem;">CONTACT VES</h2>
-    <p class="contact-sub">Sponsorships. Fan mail. Trash talk. Tryout requests (we will not respond).</p>
- 
-    <div class="contact-layout">
-      <div class="contact-info">
-        <div class="info-block">
-          <span class="info-label">// official comms</span>
-          <a href="mailto:vesinquries@gmail.com" class="info-email">vesinquries@gmail.com</a>
-          <span class="info-note">Response time: when Saibot feels like it</span>
+        <!-- STATS BAR -->
+        <div class="stats-bar">
+            <span>CLASH WINS <strong>Inifite</strong></span>
+            <span>CLASH LOSSES <strong>-1</strong></span>
+            <span>AVG DEATHS/GAME <strong>CLASSIFIED</strong></span>
+            <span>BARON THROWS <strong>TOO MANY</strong></span>
+            <span>WORLD RANKING <strong>TOP 5 LOCAL</strong></span>
         </div>
-        <div class="info-block">
-          <span class="info-label">// server status</span>
-          <div class="status-row"><span class="dot dot--green"></span><span>Main roster — LOCKED</span></div>
-          <div class="status-row"><span class="dot dot--yellow"></span><span>Sub slots — QUESTIONABLE</span></div>
-          <div class="status-row"><span class="dot dot--red"></span><span>Morale — CRITICAL</span></div>
-        </div>
-        <div class="info-block">
-          <span class="info-label">// we are looking for</span>
-          <ul class="looking-for">
-            <li>▸ Sponsors (cash preferred, energy drinks accepted)</li>
-            <li>▸ Players with positive KDA (never seen one)</li>
-            <li>▸ Someone to blame who isn't the jungler</li>
-            <li>▸ A therapist (team rate)</li>
-          </ul>
-        </div>
-      </div>
- 
-      <div class="contact-form-wrap">
-        <div class="form-row">
-          <label class="form-label" for="cf-name">SUMMONER NAME</label>
-          <input class="form-input" id="cf-name" name="name" type="text" placeholder="YourIGN123" autocomplete="off" />
-        </div>
-        <div class="form-row">
-          <label class="form-label" for="cf-email">EMAIL</label>
-          <input class="form-input" id="cf-email" name="email" type="email" placeholder="you@loser.gg" autocomplete="off" />
-        </div>
-        <div class="form-row">
-          <label class="form-label" for="cf-subject">SUBJECT</label>
-          <select class="form-input form-select" id="cf-subject" name="subject">
-            <option value="">— SELECT REASON FOR CONTACT —</option>
-            <option>Sponsorship Inquiry</option>
-            <option>Tryout Request (lol)</option>
-            <option>Fan Mail</option>
-            <option>I want to 1v1 Gilli</option>
-            <option>Trash Talk</option>
-            <option>I am a therapist</option>
-            <option>Other (specify below)</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label class="form-label" for="cf-msg">MESSAGE</label>
-          <textarea class="form-input form-textarea" id="cf-msg" name="message" placeholder="Keep it short. Our coach has the attention span of a support ward."></textarea>
-        </div>
-        <button class="form-btn" type="button" onclick="handleSubmit()">
-          <span id="btn-text">TRANSMIT MESSAGE</span>
-        </button>
-        <p class="form-disclaimer">By submitting you acknowledge that VES is not responsible for any emotional damage caused by reading our replies.</p>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- FOOTER -->
-<footer id="footer">
-  <p>© 2026 <strong>VALOR ESPORT</strong> — ALL RIGHTS RESERVED — ALL LOSSES DISPUTED</p>
-  <p style="margin-top:0.5rem;">Not affiliated with Riot Games. Affiliated with suffering.</p>
-  <p style="margin-top:0.5rem; color: #333;">*Undefeated record pending review by the top laner who left after game 1.</p>
-</footer>
+        <!-- ROSTER -->
+        <section id="roster">
+            <p class="section-label">// active_roster.json</p>
+            <h2 class="section-title">THE SQUAD</h2>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="index.js"></script>
-</body>
+            <div class="roster">
+                <player-card
+                    coach
+                    num="00"
+                    role="Head Coach · Strategic Mastermind"
+                    name="Saibot"
+                    title='"The one who pings but never plays"'
+                    bio='Responsible for all strategy, all losses, and sending the pregame "let&apos;s go boys 🔥" message. Has a 200% winrate on paper. Real winrate is sealed under NDA.'
+                    stats='[{"val":"0","key":"Games played"},{"val":"∞","key":"Opinions"},{"val":"S+","key":"Excuse rank"}]'
+                >
+                </player-card>
+
+                <player-card
+                    num="01"
+                    role="The Island"
+                    name="Gilli"
+                    title='"Mental Coach / Self-Proclaimed IGL / Vayne Main on an Island"'
+                    bio="Wins lane, loses game — every time, on schedule. Ego calibrated to Faker, mechanics calibrated to someone who just installed the game. Calls every rotation from top while refusing to make any himself. The vision of a leader. The gameplay of a liability."
+                    stats='[{"val":"14","key":"Solo deaths"},{"val":"Faker","key":"Self-rating"},{"val":"0","key":"IGL calls heeded"}]'
+                >
+                </player-card>
+
+                <player-card
+                    sub
+                    num="02"
+                    role="Anti-Authority Figure"
+                    name="CritMeDaddy"
+                    title='"Anti-IGL / Democracy enjoyer / Gilli&apos;s nightmare"'
+                    bio="Refuses every single callout made by the in-game leader on principle. Doesn't matter if the call is good — if Gilli said it, CritMeDaddy is going the other direction. Somehow this works 40% of the time, which is statistically better than following the actual calls."
+                    stats='[{"val":"0","key":"IGL calls followed"},{"val":"40%","key":"Correct anyway"},{"val":"Anarchy","key":"Playstyle"}]'
+                >
+                </player-card>
+
+                <player-card
+                    num="03"
+                    role="Fill Enjoyer"
+                    name="B4lls4ck Sw4g"
+                    title='"Fill player / Same 3 champs everywhere / Held back by enemy team"'
+                    bio="Technically a fill player. In practice, plays the exact same characters regardless of lane, role, or team comp. Held back not by teammates, but by the enemy team specifically, who keep showing up and doing things."
+                    stats='[{"val":"3","key":"Champs in pool"},{"val":"All","key":"Roles filled"},{"val":"Enemy","key":"Diff"}]'
+                >
+                </player-card>
+
+                <player-card
+                    num="04"
+                    role="Washed Veteran"
+                    name="MULLER LOVER123"
+                    title='"Retired Semi-Pro / Silent Tilter / The Ghost"'
+                    bio="Washed up, retired, and somehow still here. Doesn't say a word. Doesn't ping. Doesn't flame. Just silently tilts at 400 ELO below his peak and farms in a straight line. You'll know he's mad when he goes quiet. He's always quiet. We're scared."
+                    stats='[{"val":"???","key":"Former peak"},{"val":"0","key":"Words spoken"},{"val":"Max","key":"Silent tilt"}]'
+                >
+                </player-card>
+
+                <player-card
+                    num="05"
+                    role="Culinary Department"
+                    name="MullerGraller"
+                    title='"Cooking Specialist / Results May Vary"'
+                    bio='Approaches support like a head chef: ambitious recipes, bold execution, occasionally on fire. The dish doesn&apos;t always work out, but you have to respect the vision. Has been known to roam into a 1v3 and call it "aggressive vision control." Certified kitchen chaos.'
+                    stats='[{"val":"50%","key":"Dishes land"},{"val":"S+","key":"Ambition"},{"val":"🔥","key":"Kitchen status"}]'
+                >
+                </player-card>
+            </div>
+        </section>
+
+        <!-- SUBS -->
+        <section id="subs" style="padding-top: 0">
+            <p class="section-label">
+                // bench.json — "we aren't always the same 5"
+            </p>
+            <h2 class="section-title">SUBSTITUTES</h2>
+
+            <div class="roster">
+                <player-card
+                    num="S1"
+                    role="Substitute · Counterpicked by Everyone"
+                    name="Black Inmate"
+                    title='"Every champ counters his / Perma-invaded / Doing his best"'
+                    bio="Somehow countered by every champion in every matchup, including supports. Scientists cannot explain it. Walks into camps that have been taken. Gets invaded at level 1. Blamed by Gilli before the game even loads."
+                    stats='[{"val":"0","key":"Favorable matchups"},{"val":"HVAD ER DET FOR NOGLE COMMS?","key":"Quote"},{"val":"Yes","key":"Your fault"}]'
+                >
+                </player-card>
+
+                <player-card
+                    sub
+                    redacted
+                    num="S2"
+                    role="Substitute · [REDACTED]"
+                    name="Spacewaff1e"
+                    title="████ ████ ██████ / ████ █████ ████ █ ████"
+                    bio="██████ ██████████ █████ ████ ████████████ ██████████ ████ ████ ███████████ ████████. — [IDENTITY PENDING ANNOUNCEMENT]"
+                    stats='[{"val":"██","key":"Classified"},{"val":"██","key":"Classified"},{"val":"SOON™","key":"Status"}]'
+                >
+                </player-card>
+
+                <player-card
+                    sub
+                    num="S3"
+                    role="Substitute · Legacy Signing"
+                    name="ass eater321"
+                    title='"MULLER LOVER123&apos;s kitten / Lore character"'
+                    bio="Joined the roster as a package deal with ond paa den bund. The lore behind this signing remains classified. Arrived without a tryout, without a role, and without explanation. We didn't ask questions. We still don't. The org respects the mystery."
+                    stats='[{"val":"?","key":"Origin"},{"val":"Yes","key":"Nepotism hire"},{"val":"🐱","key":"Designation"}]'
+                >
+                </player-card>
+            </div>
+        </section>
+
+        <!-- TOURNAMENTS -->
+        <section id="tournaments" style="padding-top: 0">
+            <p class="section-label">// tournaments.log</p>
+            <h2 class="section-title">TOURNAMENTS</h2>
+
+            <div class="tournaments-grid">
+                <a href="clash1.html" class="tourney-card">
+                    <div class="tourney-num">01</div>
+                    <div class="tourney-top">
+                        <span class="tourney-badge win">3 — 0</span>
+                        <span class="tourney-date">2026</span>
+                    </div>
+                    <h3 class="tourney-name">CLASH — BRACKET STAGE</h3>
+                    <p class="tourney-sub">Season 2026 · Summoner's Rift</p>
+                    <div class="tourney-footer">
+                        <span class="tourney-result">VICTORY</span>
+                        <span class="tourney-link">View scoreboard →</span>
+                    </div>
+                </a>
+
+                <a href="clash2.html" class="tourney-card">
+                    <div class="tourney-num">02</div>
+                    <div class="tourney-top">
+                        <span class="tourney-badge win">3 — 0</span>
+                        <span class="tourney-date">2026</span>
+                    </div>
+                    <h3 class="tourney-name">CLASH — BRACKET STAGE</h3>
+                    <p class="tourney-sub">Season 2026 · Summoner's Rift</p>
+                    <div class="tourney-footer">
+                        <span class="tourney-result">VICTORY</span>
+                        <span class="tourney-link">View scoreboard →</span>
+                    </div>
+                </a>
+
+                <div class="tourney-card tourney-upcoming">
+                    <div class="tourney-num">03</div>
+                    <div class="tourney-top">
+                        <span class="tourney-badge upcoming">TBD</span>
+                        <span class="tourney-date">—</span>
+                    </div>
+                    <h3 class="tourney-name">NEXT CLASH</h3>
+                    <p class="tourney-sub">Coming soon · Stay scared</p>
+                    <div class="tourney-footer">
+                        <span class="tourney-result pending">PENDING</span>
+                        <span class="tourney-link muted">Results not yet</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MANIFESTO -->
+        <div class="manifesto-section" id="manifesto">
+            <div class="manifesto-inner">
+                <p class="section-label">// manifesto.txt</p>
+                <div class="manifesto-text">
+                    We are <em>VALOR ESPORT.</em><br />
+                    We do not surrender at 15.<br />
+                    We surrender at <em>14:59.</em><br /><br />
+                    We are <em>not</em> a ranked team.<br />
+                    We are a <span class="gold">lifestyle.</span><br /><br />
+                    Our enemies fear us.<br />
+                    Our teammates also <em>fear us.</em><br /><br />
+                    <span class="gold"
+                        >WE WILL EITHER WIN THE CLASH<br />
+                        OR HAVE A VERY DETAILED<br />
+                        POST-GAME DISCUSSION<br />
+                        ABOUT WHO INTED.</span
+                    >
+                </div>
+            </div>
+        </div>
+
+        <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-text">* undefeated in our hearts</div>
+            <div class="divider-line"></div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="contact-section" id="contact">
+            <div class="contact-inner">
+                <p class="section-label">// recruitment_open.exe</p>
+                <h2
+                    class="section-title"
+                    style="color: #fff; margin-bottom: 0.5rem"
+                >
+                    CONTACT VES
+                </h2>
+                <p class="contact-sub">
+                    Sponsorships. Fan mail. Trash talk. Tryout requests (we will
+                    not respond).
+                </p>
+
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <div class="info-block">
+                            <span class="info-label">// official comms</span>
+                            <a
+                                href="mailto:vesinquries@gmail.com"
+                                class="info-email"
+                                >vesinquries@gmail.com</a
+                            >
+                            <span class="info-note"
+                                >Response time: when Saibot feels like it</span
+                            >
+                        </div>
+                        <div class="info-block">
+                            <span class="info-label">// server status</span>
+                            <div class="status-row">
+                                <span class="dot dot--green"></span
+                                ><span>Main roster — LOCKED</span>
+                            </div>
+                            <div class="status-row">
+                                <span class="dot dot--yellow"></span
+                                ><span>Sub slots — QUESTIONABLE</span>
+                            </div>
+                            <div class="status-row">
+                                <span class="dot dot--red"></span
+                                ><span>Morale — CRITICAL</span>
+                            </div>
+                        </div>
+                        <div class="info-block">
+                            <span class="info-label"
+                                >// we are looking for</span
+                            >
+                            <ul class="looking-for">
+                                <li>
+                                    ▸ Sponsors (cash preferred, energy drinks
+                                    accepted)
+                                </li>
+                                <li>
+                                    ▸ Players with positive KDA (never seen one)
+                                </li>
+                                <li>
+                                    ▸ Someone to blame who isn't the jungler
+                                </li>
+                                <li>▸ A therapist (team rate)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrap">
+                        <div class="form-row">
+                            <label class="form-label" for="cf-name"
+                                >SUMMONER NAME</label
+                            >
+                            <input
+                                class="form-input"
+                                id="cf-name"
+                                name="name"
+                                type="text"
+                                placeholder="YourIGN123"
+                                autocomplete="off"
+                            />
+                        </div>
+                        <div class="form-row">
+                            <label class="form-label" for="cf-email"
+                                >EMAIL</label
+                            >
+                            <input
+                                class="form-input"
+                                id="cf-email"
+                                name="email"
+                                type="email"
+                                placeholder="you@loser.gg"
+                                autocomplete="off"
+                            />
+                        </div>
+                        <div class="form-row">
+                            <label class="form-label" for="cf-subject"
+                                >SUBJECT</label
+                            >
+                            <select
+                                class="form-input form-select"
+                                id="cf-subject"
+                                name="subject"
+                            >
+                                <option value="">
+                                    — SELECT REASON FOR CONTACT —
+                                </option>
+                                <option>Sponsorship Inquiry</option>
+                                <option>Tryout Request (lol)</option>
+                                <option>Fan Mail</option>
+                                <option>I want to 1v1 Gilli</option>
+                                <option>Trash Talk</option>
+                                <option>I am a therapist</option>
+                                <option>Other (specify below)</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label class="form-label" for="cf-msg"
+                                >MESSAGE</label
+                            >
+                            <textarea
+                                class="form-input form-textarea"
+                                id="cf-msg"
+                                name="message"
+                                placeholder="Keep it short. Our coach has the attention span of a support ward."
+                            ></textarea>
+                        </div>
+                        <button
+                            class="form-btn"
+                            type="button"
+                            onclick="handleSubmit()"
+                        >
+                            <span id="btn-text">TRANSMIT MESSAGE</span>
+                        </button>
+                        <p class="form-disclaimer">
+                            By submitting you acknowledge that VES is not
+                            responsible for any emotional damage caused by
+                            reading our replies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <p>
+                © 2026 <strong>VALOR ESPORT</strong> — ALL RIGHTS RESERVED — ALL
+                LOSSES DISPUTED
+            </p>
+            <p style="margin-top: 0.5rem">
+                Not affiliated with Riot Games. Affiliated with suffering.
+            </p>
+            <p style="margin-top: 0.5rem; color: #333">
+                *Undefeated record pending review by the top laner who left
+                after game 1.
+            </p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="index.js"></script>
+    </body>
 </html>
